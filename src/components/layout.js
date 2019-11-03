@@ -1,14 +1,14 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 // import { useStaticQuery, graphql } from "gatsby"
-import { Global, css } from "@emotion/core"
-import globalStyles from "../styles/global"
-import Header from "./header/header"
-import Footer from "./footer/footer"
+import { Global, css } from "@emotion/core";
+import globalStyles from "../styles/global";
+import Header from "./header/header";
+import Footer from "./footer/footer";
 
 const main = css`
   margin: 0 auto;
-`
+`;
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -28,11 +28,11 @@ const Layout = ({ children }) => {
       <main css={main}>{children}</main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;
