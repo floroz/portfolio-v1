@@ -1,10 +1,11 @@
+const config = require("./config")
+
 module.exports = {
   siteMetadata: {
-    title: `Daniele Tortora | Front End Developer`,
-    description: `I am a highly motivated Front End Developer based in London, United Kingdom, who is passionate about creating rich user interfaces and interactive web applications using a wide range of JavaScript technologies and libraries.
-    I strongly believe in the importance of writing clean, modular and loosely coupled code that is easy to document, maintain and reuse.
-    I have experience working with HTML, CSS, JavaScript, React, Redux, TypeScript, GraphQL, Apollo, Electron, Jest, Webpack.`,
-    author: `Daniele Tortora`,
+    title: config.title,
+    siteUrl: config.siteUrl,
+    description: config.description,
+    author: config.author,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
