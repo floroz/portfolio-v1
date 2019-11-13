@@ -45,7 +45,7 @@ const subTitle = css`
 const subtext = css`
   margin-top: 4rem;
   font-size: 1.6rem;
-  color: ${colors.grey};
+  color: ${colors.greyBlue};
 `;
 
 const Hero = () => {
@@ -66,13 +66,13 @@ const Hero = () => {
         >
           Daniele Tortora.
         </h1>
-        <h3
+        <h2
           css={subTitle}
           data-aos="fade-right"
           data-aos-duration={heroAnimationDuration}
         >
           I build things with JavaScript.
-        </h3>
+        </h2>
         <p css={subtext}>
           I am a Front End Developer based in London, UK who loves building web
           applications.
