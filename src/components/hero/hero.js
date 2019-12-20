@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { css } from "@emotion/core";
 import Button from "../button/button";
 import { theme } from "../../styles";
+import LinkButton from "../linkButton/linkButton";
 
 const { colors, fonts, navHeight, initialAnimationDuration, delay } = theme;
 
@@ -51,6 +52,13 @@ const subtext = css`
   color: ${colors.greyBlue};
 `;
 
+const contact = css`
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  color: ${colors.brightYellow};
+`;
+
 const Hero = () => {
   return (
     <section css={section} id="hero">
@@ -84,14 +92,15 @@ const Hero = () => {
           I am a Front End Engineer based in London, UK who loves building web
           applications.
         </p>
-        <Button
+        <LinkButton
+          to="#contact"
           data-aos="fade-up"
           data-aos-easing="ease-in-cubic"
           data-aos-delay={delay(200)}
           data-aos-duration={initialAnimationDuration}
         >
-          <Link to="#contact">Contact Me</Link>
-        </Button>
+          Contact Me
+        </LinkButton>
       </div>
     </section>
   );
