@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { css } from "@emotion/core";
 import Button from "../button/button";
 import { theme } from "../../styles";
@@ -6,7 +7,7 @@ import { theme } from "../../styles";
 const { colors, fonts, navHeight, initialAnimationDuration, delay } = theme;
 
 const section = css`
-  height: calc(100vh - ${navHeight});
+  height: 100vh;
   font-size: 3.5rem;
   display: flex;
   flex-flow: column nowrap;
@@ -89,7 +90,7 @@ const Hero = () => {
           data-aos-delay={delay(200)}
           data-aos-duration={initialAnimationDuration}
         >
-          Contact Me
+          <Link to="#contact">Contact Me</Link>
         </Button>
       </div>
     </section>

@@ -22,6 +22,7 @@ const headerStyle = css`
   top: 0;
   z-index: 10;
   box-shadow: none;
+  background: ${colors.maastrichtBlue};
 `;
 
 const nav = css`
@@ -59,6 +60,10 @@ const logo = css`
   color: ${colors.brightYellow};
   font-size: 1.8rem;
   font-family: ${fonts.secondary};
+
+  & > a {
+    color: ${colors.brightYellow};
+  }
 `;
 
 const ul = css`
