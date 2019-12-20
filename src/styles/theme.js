@@ -24,7 +24,11 @@ const theme = {
     justify-content: center;
     align-items: center;
   `,
-  heroAnimationDuration: 1000,
+  initialAnimationDuration: 500,
+  delay: (duration) => {
+    if (!duration) return 1000;
+    return 1000 + Number(duration);
+  }
 };
 
 export default theme;

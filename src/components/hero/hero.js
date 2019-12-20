@@ -2,7 +2,8 @@ import React from "react";
 import { css } from "@emotion/core";
 import Button from "../button/button";
 import { theme } from "../../styles";
-const { colors, fonts, navHeight, heroAnimationDuration } = theme;
+
+const { colors, fonts, navHeight, initialAnimationDuration, delay } = theme;
 
 const section = css`
   height: calc(100vh - ${navHeight});
@@ -22,18 +23,19 @@ const box = css`
 `;
 
 const intro = css`
+  display: block;
+  margin-bottom: 1rem;
   font-family: ${fonts.primary};
   font-size: 2rem;
   line-height: 1.1;
   letter-spacing: 5px;
-
   color: ${colors.brightYellow};
 `;
 
 const title = css`
   font-size: 6rem;
   line-height: 1.2;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const subTitle = css`
@@ -52,34 +54,40 @@ const Hero = () => {
   return (
     <section css={section} id="hero">
       <div css={box}>
-        <p
-          css={intro}
-          data-aos="fade-down"
-          data-aos-duration={heroAnimationDuration}
-        >
-          Hi, I am{" "}
-        </p>
         <h1
           css={title}
-          data-aos="fade-left"
-          data-aos-duration={heroAnimationDuration}
+          data-aos="fade-right"
+          data-aos-easing="ease-in-cubic"
+          data-aos-delay={delay()}
+          data-aos-duration={initialAnimationDuration}
         >
+          <span css={intro}>Hi, I am </span>
           Daniele Tortora.
         </h1>
         <h2
           css={subTitle}
           data-aos="fade-right"
-          data-aos-duration={heroAnimationDuration}
+          data-aos-easing="ease-in-cubic"
+          data-aos-delay={delay()}
+          data-aos-duration={initialAnimationDuration}
         >
           I build things with JavaScript.
         </h2>
-        <p css={subtext}>
-          I am a Front End Developer based in London, UK who loves building web
+        <p
+          css={subtext}
+          data-aos="fade-right"
+          data-aos-easing="ease-in-cubic"
+          data-aos-delay={delay()}
+          data-aos-duration={initialAnimationDuration}
+        >
+          I am a Front End Engineer based in London, UK who loves building web
           applications.
         </p>
         <Button
-          data-aos="fade-up-right"
-          data-aos-duration={heroAnimationDuration}
+          data-aos="fade-up"
+          data-aos-easing="ease-in-cubic"
+          data-aos-delay={delay(200)}
+          data-aos-duration={initialAnimationDuration}
         >
           Contact Me
         </Button>
