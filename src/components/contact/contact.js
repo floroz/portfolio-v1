@@ -24,7 +24,7 @@ const header = css`
 `;
 
 const subText = css`
-  width: 50vw;
+  width: 75vw;
   font-size: 1.6rem;
   line-height: 3rem;
   color: ${colors.grey};

@@ -51,6 +51,8 @@ export default css`
   }
 
   /* Remove list styles on ul, ol elements with a class attribute */
+  ul,
+  ol,
   ul[class],
   ol[class] {
     list-style: none;
