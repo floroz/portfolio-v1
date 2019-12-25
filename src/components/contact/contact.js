@@ -1,7 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
 import { theme } from "../../styles";
-import Button from "../button/button";
 import LinkButton from "../linkButton/linkButton";
 
 const { fonts, colors } = theme;
@@ -16,9 +15,8 @@ const section = css`
 `;
 
 const header = css`
-  font-family: ${fonts.secondary};
+  font-family: ${fonts.primary};
   font-weight: normal;
-  letter-spacing: 1rem;
   font-size: 5rem;
   margin-bottom: 1rem;
 `;
@@ -33,7 +31,7 @@ const subText = css`
 const Contact = () => {
   return (
     <section css={section} id="contact">
-      <h4 css={header}>Get in touch!</h4>
+      <h4 css={header}>Get in touch</h4>
       <p css={subText}>
         I am not available to any freelance work at the moment, but I am always
         happy to consider new ideas or collaborations, or even just to have a

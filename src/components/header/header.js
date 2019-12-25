@@ -12,15 +12,15 @@ const {
   delay,
 } = theme;
 
-const headerStyle = css`
+const header = css`
   width: 100%;
   height: ${navHeight};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   box-shadow: none;
   background: ${colors.maastrichtBlue};
 `;
@@ -113,7 +113,7 @@ const sidebar = css`
 
 const Header = () => {
   return (
-    <header css={headerStyle}>
+    <header css={header}>
       <nav css={nav}>
         <figure css={figure}>
           <div css={logoContainer}>
