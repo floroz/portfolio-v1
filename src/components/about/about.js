@@ -5,18 +5,24 @@ import { theme } from "../../styles";
 import profilePic from "../../images/profilepic.jpg";
 
 const { colors, fonts } = theme;
-const section = css`
-  height: 60vh;
+const Section = styled.section`
+  height: 100vh;
   width: 100%;
   padding: 0 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Grid = styled.div`
   background: ${colors.maastrichtBlue};
   display: grid;
   grid-template-columns: 1fr 40%;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content 50vh;
   grid-gap: 2.5rem;
 `;
 
-const title = css`
+const Title = styled.h3`
   font-family: ${fonts.primary};
   font-size: 5rem;
   font-weight: normal;
@@ -25,7 +31,7 @@ const title = css`
   justify-self: center;
 `;
 
-const article = css`
+const AboutGrid = styled.article`
   grid-row: 2/3;
   width: 100%;
   justify-self: center;
@@ -37,7 +43,7 @@ const article = css`
   grid-gap: 2rem;
 `;
 
-const paragraph = css`
+const Text = styled.p`
   font-family: ${fonts.secondary};
   font-size: 1.4rem;
   line-height: 1.5;
@@ -46,12 +52,12 @@ const paragraph = css`
   align-self: flex-start;
 `;
 
-const imgContainer = css`
+const ImgContainer = styled.figure`
   position: relative;
   grid-row: 2/3;
 `;
 
-const frame = css`
+const Frame = styled.div`
   position: absolute;
   top: 70px;
   left: 70px;
@@ -62,7 +68,7 @@ const frame = css`
   z-index: 95;
 `;
 
-const img = css`
+const Img = styled.img`
   position: absolute;
   width: 25rem;
   max-width: 100%;
@@ -75,6 +81,7 @@ const tabButtonStyle = css`
   padding: 1rem 0;
   outline: none;
   border: none;
+  border-bottom: 2px solid transparent;
   background-color: transparent;
   color: ${colors.white};
   font-family: ${fonts.secondary};
@@ -115,44 +122,46 @@ const About = () => {
   const [activeText, setActiveText] = React.useState("intro");
 
   return (
-    <section css={section} id="about">
-      <h3 css={title}>About me</h3>
-      <article css={article}>
-        {activeText === "intro" && (
-          <p css={paragraph}>
-            I am a highly motivated Front End Engineer who is passionate about
-            creating rich user interfaces and interactive web applications using
-            a wide range of JavaScript technologies and libraries. I strongly
-            believe in the importance of writing clean, modular and loosely
-            coupled code that is easy to document, maintain and reuse.
-          </p>
-        )}
-        {activeText === "journey" && (
-          <p css={paragraph}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            odio accusantium distinctio maiores nemo beatae doloribus animi,
-            mollitia dolorum ad aperiam, quaerat inventore velit omnis nostrum
-            dolor. Sunt, eaque quod.
-          </p>
-        )}
-        <IntroButton
-          onClick={() => setActiveText("intro")}
-          activeText={activeText}
-        >
-          Intro
-        </IntroButton>
-        <MoreButton
-          onClick={() => setActiveText("journey")}
-          activeText={activeText}
-        >
-          Journey
-        </MoreButton>
-      </article>
-      <figure css={imgContainer}>
-        <div css={frame} />
-        <img src={profilePic} alt="" css={img} />
-      </figure>
-    </section>
+    <Section id="about">
+      <Grid>
+        <Title>About me</Title>
+        <AboutGrid>
+          {activeText === "intro" && (
+            <Text>
+              I am a highly motivated Front End Engineer who is passionate about
+              creating rich user interfaces and interactive web applications
+              using a wide range of JavaScript technologies and libraries. I
+              strongly believe in the importance of writing clean, modular and
+              loosely coupled code that is easy to document, maintain and reuse.
+            </Text>
+          )}
+          {activeText === "journey" && (
+            <Text>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur odio accusantium distinctio maiores nemo beatae
+              doloribus animi, mollitia dolorum ad aperiam, quaerat inventore
+              velit omnis nostrum dolor. Sunt, eaque quod.
+            </Text>
+          )}
+          <IntroButton
+            onClick={() => setActiveText("intro")}
+            activeText={activeText}
+          >
+            Intro
+          </IntroButton>
+          <MoreButton
+            onClick={() => setActiveText("journey")}
+            activeText={activeText}
+          >
+            Journey
+          </MoreButton>
+        </AboutGrid>
+        <ImgContainer>
+          <Frame />
+          <Img src={profilePic} alt="" />
+        </ImgContainer>
+      </Grid>
+    </Section>
   );
 };
 
