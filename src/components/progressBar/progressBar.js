@@ -1,19 +1,24 @@
 import React from "react";
 import themes from "../../styles/theme";
 import styled from "@emotion/styled";
-const { colors } = themes;
+const { colors, fonts } = themes;
 
 const ProgressBarFrame = styled.div`
   display: block;
   border-radius: 4px;
   border: 1px solid ${colors.brightYellow};
-  box-shadow: 0 0 25px 7px ${colors.brightYellowTransparent};
+  box-shadow: 0 0 25px 5px ${colors.brightYellowTransparent};
   height: 2rem;
   width: 80%;
 
-  &::before {
-    content: ${props => props.name};
+  &::after {
+    content: "${props => props.description}";
     display: block;
+    font-family: ${fonts.secondary};
+    font-size: 1.6rem;
+    color: ${colors.white};
+    height: 100%;
+    letter-spacing: 0.3rem;
   }
 
   [data-aos="progress-bar"] {
@@ -28,12 +33,13 @@ const ProgressBarFrame = styled.div`
   }
 `;
 
-export const ProgressBar = ({ name = "", width, ...props }) => {
+export const ProgressBar = ({ description = "", width, ...props }) => {
   return (
     <ProgressBarFrame
       role="presentation"
       aria-label="progress bar for skill"
       width={width}
+      description={description}
       {...props}
     >
       <span

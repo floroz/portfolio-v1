@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "gatsby";
 import { css } from "@emotion/core";
 import { theme } from "../../styles";
+import Logo from "../logo/logo";
 
 const {
   navHeight,
@@ -33,33 +33,6 @@ const nav = css`
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
-`;
-
-const figure = css`
-  ${flexCenter}
-`;
-
-const logoContainer = css`
-  ${flexCenter}
-  margin-left: 3.5rem;
-  width: 46px;
-  height: 46px;
-  border-radius: 4px;
-  border: 1px solid ${colors.brightYellow};
-
-  &:hover {
-    background-color: ${colors.brightYellowTransparent};
-  }
-`;
-
-const logo = css`
-  padding: 1rem;
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  color: ${colors.brightYellow};
-  font-size: 1.8rem;
-  font-family: ${fonts.secondary};
 `;
 
 const ul = css`
@@ -115,13 +88,7 @@ const Header = () => {
   return (
     <header css={header}>
       <nav css={nav}>
-        <figure css={figure}>
-          <div css={logoContainer}>
-            <Link to="#" aria-label="home" css={logo}>
-              DT
-            </Link>
-          </div>
-        </figure>
+        <Logo />
         <ul css={ul}>
           <li
             data-aos="fade-down"

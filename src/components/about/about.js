@@ -55,6 +55,15 @@ const Text = styled.p`
 const ImgContainer = styled.figure`
   position: relative;
   grid-row: 2/3;
+
+  /* The AOS custom animation needs to be in a parent container */
+  [data-aos="about-frame"] {
+    transform: rotate(-90deg);
+
+    &.aos-animate {
+      transform: rotate(0);
+    }
+  }
 `;
 
 const Frame = styled.div`
@@ -146,18 +155,24 @@ const About = () => {
           <IntroButton
             onClick={() => setActiveText("intro")}
             activeText={activeText}
+            data-aos="fade-right"
           >
             Intro
           </IntroButton>
           <MoreButton
             onClick={() => setActiveText("journey")}
             activeText={activeText}
+            data-aos="fade-right"
           >
             Journey
           </MoreButton>
         </AboutGrid>
         <ImgContainer>
-          <Frame />
+          <Frame
+            data-aos="about-frame"
+            data-aos-duration="750"
+            data-aos-delay="300"
+          />
           <Img src={profilePic} alt="" />
         </ImgContainer>
       </Grid>
