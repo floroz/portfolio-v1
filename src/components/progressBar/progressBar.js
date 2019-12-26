@@ -7,7 +7,7 @@ const ProgressBarFrame = styled.div`
   display: block;
   border-radius: 4px;
   border: 1px solid ${colors.brightYellow};
-  box-shadow: 0 0 18px 10px ${colors.brightYellowTransparent};
+  box-shadow: 0 0 25px 7px ${colors.brightYellowTransparent};
   height: 2rem;
   width: 80%;
 
@@ -38,8 +38,8 @@ export const ProgressBar = ({ name = "", width, ...props }) => {
     >
       <span
         data-aos="progress-bar"
-        data-aos-delay="750"
-        data-aos-duration="1000"
+        data-aos-delay="250"
+        data-aos-duration="750"
         data-aos-easing="ease-in-out-sine"
       />
     </ProgressBarFrame>

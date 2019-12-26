@@ -6,7 +6,7 @@ import profilePic from "../../images/profilepic.jpg";
 
 const { colors, fonts } = theme;
 const section = css`
-  height: 100vh;
+  height: 60vh;
   width: 100%;
   padding: 0 5rem;
   background: ${colors.maastrichtBlue};
