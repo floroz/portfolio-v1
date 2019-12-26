@@ -6,6 +6,7 @@ export default () => (
     width="100px"
     height="100px"
   >
+    <title>React</title>
     <circle cx="50" cy="50" r="7" fill="#39c1d7" />
     <path
       fill="#1f212b"
