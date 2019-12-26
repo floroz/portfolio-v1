@@ -1,6 +1,5 @@
 import React from "react";
 import themes from "../../styles/theme";
-import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 const { colors } = themes;
 
@@ -16,13 +15,17 @@ const ProgressBarFrame = styled.div`
     content: ${props => props.name};
     display: block;
   }
-`;
 
-const ProgressBarFill = styled.span`
-  display: inline-block;
-  width: ${props => props.width}%;
-  height: 100%;
-  background-color: ${colors.brightYellow};
+  [data-aos="progress-bar"] {
+    display: inline-block;
+    height: 100%;
+    background-color: ${colors.brightYellow};
+    width: 0;
+
+    &.aos-animate {
+      width: ${props => props.width}%;
+    }
+  }
 `;
 
 export const ProgressBar = ({ name = "", width, ...props }) => {
@@ -30,9 +33,15 @@ export const ProgressBar = ({ name = "", width, ...props }) => {
     <ProgressBarFrame
       role="presentation"
       aria-label="progress bar for skill"
+      width={width}
       {...props}
     >
-      <ProgressBarFill width={width} />
+      <span
+        data-aos="progress-bar"
+        data-aos-delay="750"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out-sine"
+      />
     </ProgressBarFrame>
   );
 };
