@@ -37,7 +37,7 @@ const Contact = () => {
         happy to consider new ideas or collaborations, or even just to have a
         chat about a new technology!
       </p>
-      <LinkButton href="mailto:contact@danieletortora.com?subject=Get%20in%20Touch">
+      <LinkButton to="mailto:contact@danieletortora.com?subject=Get%20in%20Touch">
         Contact me
       </LinkButton>
     </section>

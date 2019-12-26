@@ -28,7 +28,7 @@ const button = css`
 
 const LinkButton = ({ children, ...otherProps }) => {
   return (
-    <Link css={button} {...otherProps}>
+    <Link css={button} to="#" {...otherProps}>
       {children}
     </Link>
   );

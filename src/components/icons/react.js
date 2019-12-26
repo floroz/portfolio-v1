@@ -1,10 +1,11 @@
 import React from "react";
-export default () => (
+export const ReactIcon = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"
     width="100px"
     height="100px"
+    {...props}
   >
     <title>React</title>
     <circle cx="50" cy="50" r="7" fill="#39c1d7" />
@@ -22,3 +23,5 @@ export default () => (
     />
   </svg>
 );
+
+export default ReactIcon;

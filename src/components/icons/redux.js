@@ -1,14 +1,12 @@
 import React from "react";
 
-export default () => (
+export const ReduxIcon = props => (
   <svg
-    width="256px"
-    height="244px"
+    width="70"
     viewBox="0 0 256 244"
     version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid"
+    {...props}
   >
     <title>Redux</title>
     <g>
@@ -19,3 +17,5 @@ export default () => (
     </g>
   </svg>
 );
+
+export default ReduxIcon;

@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import About from "../components/about/about";
 import Contact from "../components/contact/contact";
+import Skills from "../components/skills/skills";
 
 // if we're in dev mode
 if (process.env.NODE_ENV === "development") {
@@ -25,6 +26,7 @@ const IndexPage = ({ data }) => {
       <SEO />
       <Hero />
       <About />
+      <Skills />
       <Contact />
     </Layout>
   );

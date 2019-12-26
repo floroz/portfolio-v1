@@ -1,13 +1,13 @@
 import React from "react";
-export default () => (
+
+export const SASSIcon = props => (
   <svg
     width="256px"
     height="192px"
     viewBox="0 0 256 192"
     version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     preserveAspectRatio="xMidYMid"
+    {...props}
   >
     <title>Sass</title>
     <g fill="#CD6799">
@@ -15,3 +15,5 @@ export default () => (
     </g>
   </svg>
 );
+
+export default SASSIcon;
