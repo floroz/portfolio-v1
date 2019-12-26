@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Hero from "../components/hero/hero";
@@ -17,7 +18,8 @@ if (process.env.NODE_ENV === "development") {
 
 AOS.init();
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
       <SEO />
@@ -29,3 +31,13 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
