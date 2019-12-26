@@ -91,7 +91,7 @@ const Hero = () => {
           applications.
         </p>
         <LinkButton
-          to="#contact"
+          href="#contact"
           data-aos="fade-up"
           data-aos-easing="ease-in-cubic"
           data-aos-delay={delay(200)}

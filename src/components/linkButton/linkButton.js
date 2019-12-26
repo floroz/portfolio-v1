@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { Link } from "gatsby";
 import { theme } from "../../styles";
 
 const { colors, fonts } = theme;
@@ -26,11 +25,11 @@ const button = css`
   }
 `;
 
-const LinkButton = ({ children, ...otherProps }) => {
+const LinkButton = ({ children, ...props }) => {
   return (
-    <Link css={button} to="#" {...otherProps}>
+    <a css={button} {...props}>
       {children}
-    </Link>
+    </a>
   );
 };
 

@@ -39,6 +39,7 @@ const anchor = css`
 
   &:hover > svg {
     transform: rotate(-15deg);
+    opacity: 0.8;
   }
 `;
 
