@@ -13,9 +13,6 @@ const main = css`
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 2500);
-  }, []);
   return !loading ? (
     <>
       <Header />
@@ -26,7 +23,7 @@ const Layout = ({ children }) => {
   ) : (
     <>
       <Global styles={globalStyles} />
-      <LoadingIntro />
+      <LoadingIntro setLoading={setLoading} />
     </>
   );
 };

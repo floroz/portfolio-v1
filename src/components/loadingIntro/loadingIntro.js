@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import theme from "../../styles/theme";
 import Logo from "../logo/logo";
 
@@ -16,10 +18,51 @@ const LoadingIntroMain = styled.main`
   align-items: center;
 `;
 
-export const LoadingIntro = () => {
+/* this is necessary to make sure does not
+appear before the animation starts */
+const hideBeforeAnimation = css`
+  opacity: 0;
+  transform: scale(0);
+`;
+
+const tl = gsap.timeline();
+
+export const LoadingIntro = ({ setLoading }) => {
+  const logoRef = useRef();
+
+  useEffect(() => {
+    if (logoRef.current) {
+      tl.to(logoRef.current, {
+        duration: 0.5,
+        delay: 1,
+        opacity: 1,
+        scale: 1,
+      })
+        .to(logoRef.current, {
+          duration: 0.5,
+          delay: 0.5,
+          rotation: 360,
+          transformOrigin: "50% 50%",
+        })
+        .to(logoRef.current, {
+          duration: 0.5,
+          delay: 0.5,
+          rotation: 360 * 2,
+          transformOrigin: "50% 50%",
+        })
+        .to(logoRef.current, {
+          duration: 0.3,
+          delay: 0.2,
+          scale: 0,
+          opacity: 0,
+          onComplete: () => setLoading(false),
+        });
+    }
+  }, [logoRef, setLoading]);
+
   return (
     <LoadingIntroMain>
-      <Logo />
+      <Logo logoRef={logoRef} css={hideBeforeAnimation} />
     </LoadingIntroMain>
   );
 };
