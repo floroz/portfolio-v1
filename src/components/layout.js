@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Global, css } from "@emotion/core";
 import globalStyles from "../styles/global";
-import Header from "./header/header";
 import Footer from "./footer/footer";
 import LoadingIntro from "./loadingIntro/loadingIntro";
+import Header from "./header/header";
 
 const main = css`
   margin: 0 auto;
