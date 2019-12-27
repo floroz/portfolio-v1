@@ -33,12 +33,12 @@ const ProgressBarFrame = styled.div`
   }
 `;
 
-export const ProgressBar = ({ description = "", width, ...props }) => {
+export const ProgressBar = ({ description = "", level, ...props }) => {
   return (
     <ProgressBarFrame
       role="presentation"
       aria-label="progress bar for skill"
-      width={width}
+      width={level}
       description={description}
       {...props}
     >
