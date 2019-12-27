@@ -7,7 +7,7 @@ const { fonts, colors } = theme;
 
 const section = css`
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

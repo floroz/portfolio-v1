@@ -42,12 +42,14 @@ export const LoadingIntro = ({ setLoading }) => {
           duration: 0.5,
           delay: 0.5,
           rotation: 360,
+          ease: "power4.out",
           transformOrigin: "50% 50%",
         })
         .to(logoRef.current, {
           duration: 0.5,
           delay: 0.5,
           rotation: 360 * 2,
+          ease: "power4.out",
           transformOrigin: "50% 50%",
         })
         .to(logoRef.current, {
