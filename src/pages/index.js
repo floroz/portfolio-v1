@@ -17,18 +17,21 @@ if (process.env.NODE_ENV === "development") {
   axe(React, ReactDOM, 1000);
 }
 
-AOS.init();
+AOS.init({
+  once: true,
+});
 
-const IndexPage = ({ data }) => {
-  console.log(data);
+const IndexPage = () => {
   return (
-    <Layout>
-      <SEO />
-      <Hero />
-      <About />
-      <Skills />
-      <Contact />
-    </Layout>
+    <>
+      <Layout>
+        <SEO />
+        <Hero />
+        <About />
+        <Skills />
+        <Contact />
+      </Layout>
+    </>
   );
 };
 
