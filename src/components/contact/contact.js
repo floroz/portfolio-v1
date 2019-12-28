@@ -12,6 +12,15 @@ const section = css`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  padding: 0 5rem;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 const header = css`
@@ -31,13 +40,30 @@ const subText = css`
 const Contact = () => {
   return (
     <section css={section} id="contact">
-      <h4 css={header}>Get in touch</h4>
-      <p css={subText}>
+      <h4
+        css={header}
+        data-aos="fade-up"
+        data-aos-duration="350"
+        data-aos-delay="500"
+      >
+        Get in touch
+      </h4>
+      <p
+        css={subText}
+        data-aos="fade-up"
+        data-aos-duration="350"
+        data-aos-delay="500"
+      >
         I am not available to any freelance work at the moment, but I am always
         happy to consider new ideas or collaborations, or even just to have a
         chat about a new technology!
       </p>
-      <LinkButton to="mailto:contact@danieletortora.com?subject=Get%20in%20Touch">
+      <LinkButton
+        to="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
+        data-aos="fade-up"
+        data-aos-duration="350"
+        data-aos-delay="500"
+      >
         Contact me
       </LinkButton>
     </section>

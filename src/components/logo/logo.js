@@ -8,7 +8,6 @@ const { flexCenter, colors, fonts } = theme;
 
 const Figure = styled.figure`
   ${flexCenter}
-  margin-left: 3.5rem;
 `;
 
 const LogoContainer = styled.div`

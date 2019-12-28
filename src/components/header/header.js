@@ -39,6 +39,18 @@ const nav = css`
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
+
+  &:first-child {
+    margin-left: 3.5rem;
+
+    @media screen and (max-width: 720px) {
+      margin-left: 2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-left: 1rem;
+    }
+  }
 `;
 
 const ul = css`
@@ -96,45 +108,49 @@ const responsiveList = css`
   @media screen and (max-width: 720px) {
     ${flexCenter}
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
 
     li {
-      font-family: ${fonts.primary};
-      font-size: 1.3rem;
       padding: 1rem 2rem;
 
       a {
         text-decoration: none;
         display: block;
-        color: ${colors.greyBlue};
+        color: ${colors.maastrichtBlue};
         padding: 0.5rem 0;
         border-bottom: 1.5px solid transparent;
+        font-family: ${fonts.primary};
+        font-size: 1.6rem;
+        text-transform: uppercase;
 
         &:hover,
         &:focus,
         &:active {
-          color: ${colors.brightYellow};
-          border-bottom: 1.5px solid ${colors.brightYellow};
+          color: ${colors.white};
+          border-bottom: 1.5px solid ${colors.white};
         }
 
         span {
-          color: ${colors.brightYellow};
+          color: ${colors.white};
         }
       }
     }
 
+    /*
+    * Resume Button
+     */
     li:last-child {
       a {
-        border: 1px solid ${colors.brightYellow};
+        border: 1px solid ${colors.maastrichtBlue};
         padding: 2rem;
-        color: ${colors.brightYellow};
+        color: ${colors.maastrichtBlue};
         border-radius: 3px;
 
         &:hover,
         &:active,
         &:focus {
-          background-color: ${colors.brightYellowTransparent};
+          background-color: ${colors.maastrichtBlueTransparent};
         }
       }
     }
@@ -142,28 +158,48 @@ const responsiveList = css`
 `;
 
 const Sidebar = styled.aside`
+  display: none;
+
+  @media screen and (max-width: 720px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -999px;
+    height: 100vh;
+    width: 65vw;
+    background: ${colors.greyBlue};
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    &.slide-enter {
+      left: -999px;
+    }
+
+    &.slide-enter-done {
+      left: 0;
+    }
+
+    &.slide-exit {
+      left: -999px;
+    }
+
+    &.slide-exit-done {
+      left: -999px;
+    }
+  }
+`;
+
+const BackDrop = styled.div`
+  background: rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
-  height: 100vh;
-  width: 50vw;
-  background: ${colors.greyBlue};
-  transition: all 300ms ease-out;
-
-  &.slide-enter {
-    left: -999px;
-  }
-
-  &.slide-enter-done {
-    left: 0;
-  }
-
-  &.slide-exit {
-    left: 0;
-  }
-
-  &.slide-exit-done {
-    left: -999px;
-  }
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
 `;
 
 const Header = () => {
@@ -171,6 +207,8 @@ const Header = () => {
 
   const onHamburgerClick = () =>
     setSideDrawerOpen(previousValue => !previousValue);
+
+  const closeSideBar = () => setSideDrawerOpen(false);
 
   return (
     <header css={header}>
@@ -218,30 +256,22 @@ const Header = () => {
         </ul>
         <Hamburger onClick={onHamburgerClick} />
       </nav>
-      <CSSTransition
-        in={sideDrawerOpen}
-        classNames="slide"
-        timeout={300}
-        unmountOnExit
-        mountOnEnter
-      >
+      <CSSTransition in={sideDrawerOpen} classNames="slide" timeout={250}>
         <Sidebar>
           <ul css={responsiveList}>
             <li>
-              <a href="#about">
+              <a href="#about" onClick={closeSideBar}>
                 <span>0.</span> About
               </a>
             </li>
             <li>
-              <a href="#work">
+              <a href="#work" onClick={closeSideBar}>
                 <span>1.</span> Work
               </a>
             </li>
             <li>
-              <a href="#contact">
-                {" "}
-                Contact
-                <span>2.</span>
+              <a href="#contact" onClick={closeSideBar}>
+                <span>2.</span> Contact
               </a>
             </li>
             <li>
@@ -250,6 +280,14 @@ const Header = () => {
           </ul>
         </Sidebar>
       </CSSTransition>
+      {sideDrawerOpen && (
+        <BackDrop
+          onClick={closeSideBar}
+          tabIndex="-1"
+          aria-hidden="true"
+          role="presentation"
+        />
+      )}
     </header>
   );
 };

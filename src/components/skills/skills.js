@@ -22,6 +22,14 @@ const section = css`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 const title = css`

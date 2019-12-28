@@ -5,13 +5,23 @@ import { theme } from "../../styles";
 import profilePic from "../../images/profilepic.jpg";
 
 const { colors, fonts } = theme;
+
 const Section = styled.section`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   padding: 0 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 const Grid = styled.div`
@@ -20,6 +30,13 @@ const Grid = styled.div`
   grid-template-columns: 1fr 40%;
   grid-template-rows: min-content 50vh;
   grid-gap: 2.5rem;
+
+  @media screen and (max-width: 920px) {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h3`
@@ -29,10 +46,21 @@ const Title = styled.h3`
   margin-bottom: 2.5rem;
   grid-row: 1/2;
   justify-self: center;
+
+  @media screen and (max-width: 920px) {
+    margin-bottom: 2rem;
+    font-size: 4.5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
 `;
 
 const AboutGrid = styled.article`
   grid-row: 2/3;
+  grid-column: 1/2;
   width: 100%;
   justify-self: center;
   position: relative;
@@ -41,6 +69,11 @@ const AboutGrid = styled.article`
   grid-template-columns: min-content 1fr;
   grid-template-rows: 50px min-content;
   grid-gap: 2rem;
+
+  @media screen and (max-width: 920px) {
+    grid-row: 2/3;
+    order: 2;
+  }
 `;
 
 const Text = styled.p`
@@ -52,9 +85,10 @@ const Text = styled.p`
   align-self: flex-start;
 `;
 
-const ImgContainer = styled.figure`
-  position: relative;
+const Figure = styled.figure`
+  width: 100%;
   grid-row: 2/3;
+  grid-column: 2/3;
 
   /* The AOS custom animation needs to be in a parent container */
   [data-aos="about-frame"] {
@@ -64,25 +98,57 @@ const ImgContainer = styled.figure`
       transform: rotate(0);
     }
   }
+
+  @media screen and (max-width: 920px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    margin-bottom: 10rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 8rem;
+  }
+`;
+
+const ImgContainer = styled.div`
+  position: relative;
+  width: 30rem;
 `;
 
 const Frame = styled.div`
   position: absolute;
-  top: 70px;
-  left: 70px;
+  top: 20%;
+  left: 20%;
   padding: 3.5rem;
   border: 10px solid ${colors.brightYellow};
   width: 25rem;
   height: 25rem;
   z-index: 95;
+
+  @media screen and (max-width: 920px) {
+  }
+
+  @media screen and (max-width: 600px) {
+    top: 20%;
+    left: 30%;
+    width: 20rem;
+    height: 20rem;
+  }
 `;
 
 const Img = styled.img`
-  position: absolute;
   width: 25rem;
   max-width: 100%;
+  position: relative;
   z-index: 100;
   filter: contrast(140%) grayscale(100%);
+
+  @media screen and (max-width: 600px) {
+    width: 20rem;
+    margin: 0 auto;
+  }
 `;
 
 const tabButtonStyle = css`
@@ -133,7 +199,13 @@ const About = () => {
   return (
     <Section id="about">
       <Grid>
-        <Title>About me</Title>
+        <Title
+          data-aos="fade-down"
+          data-aos-duration="350"
+          data-aos-delay="500"
+        >
+          About me
+        </Title>
         <AboutGrid>
           {activeText === "intro" && (
             <Text>
@@ -165,14 +237,16 @@ const About = () => {
             Journey
           </MoreButton>
         </AboutGrid>
-        <ImgContainer>
-          <Frame
-            data-aos="about-frame"
-            data-aos-duration="750"
-            data-aos-delay="300"
-          />
-          <Img src={profilePic} alt="" />
-        </ImgContainer>
+        <Figure>
+          <ImgContainer>
+            <Frame
+              data-aos="about-frame"
+              data-aos-duration="750"
+              data-aos-delay="300"
+            />
+            <Img src={profilePic} alt="" />
+          </ImgContainer>
+        </Figure>
       </Grid>
     </Section>
   );
