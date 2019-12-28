@@ -3,7 +3,7 @@ import { css } from "@emotion/core";
 import { theme } from "../../styles";
 import LinkButton from "../linkButton/linkButton";
 
-const { colors, fonts, navHeight, initialAnimationDuration, delay } = theme;
+const { colors, fonts, initialAnimationDuration, delay } = theme;
 
 const section = css`
   height: 100vh;
@@ -13,6 +13,14 @@ const section = css`
   justify-content: center;
   align-items: flex-start;
   padding: 0 5rem;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 const box = css`
@@ -30,31 +38,48 @@ const intro = css`
   line-height: 1.1;
   letter-spacing: 5px;
   color: ${colors.brightYellow};
+
+  @media screen and (max-width: 900px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const title = css`
   font-size: 6rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 900px) {
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const subTitle = css`
   font-size: 5rem;
   color: ${colors.greyBlue};
   line-height: 1.1;
+
+  @media screen and (max-width: 900px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const subtext = css`
   margin-top: 4rem;
   font-size: 1.6rem;
   color: ${colors.greyBlue};
-`;
 
-const contact = css`
-  text-decoration: none;
-  text-align: center;
-  display: block;
-  color: ${colors.brightYellow};
+  @media screen and (max-width: 900px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const Hero = () => {
