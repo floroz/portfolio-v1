@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import { theme } from "styles";
+import { theme } from "styles/index";
 import profilePic from "images/profilepic.jpg";
 
 const { colors, fonts } = theme;
@@ -67,7 +67,7 @@ const AboutGrid = styled.article`
 
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 50px min-content;
+  grid-template-rows: 60px 60px 60px;
   grid-gap: 2rem;
 
   @media screen and (max-width: 920px) {
@@ -79,10 +79,18 @@ const AboutGrid = styled.article`
 const Text = styled.p`
   font-family: ${fonts.secondary};
   font-size: 1.4rem;
-  line-height: 1.5;
+  line-height: 1.7;
+  text-align: left;
   grid-column: 2/3;
-  grid-row: 1/3;
+  grid-row: 1/4;
   align-self: flex-start;
+`;
+
+const HighLight = styled.span`
+  /* text-decoration-line: underline;
+  text-decoration-color: ${colors.brightYellow};
+  text-decoration-style: double; */
+  color: ${colors.brightYellow};
 `;
 
 const Figure = styled.figure`
@@ -174,8 +182,7 @@ const tabButtonStyle = css`
 `;
 
 const IntroButton = styled.button`
-  ${tabButtonStyle} /* top: 15px;
-  left: -69px; */
+  ${tabButtonStyle}
   grid-row: 1/2;
   grid-column: 1/2;
   border-bottom: 2px solid
@@ -183,9 +190,8 @@ const IntroButton = styled.button`
       props.activeText === "intro" ? colors.brightYellow : "transparent"};
 `;
 
-const MoreButton = styled.button`
-  ${tabButtonStyle} /* top: 100px;
-  left: -69px; */
+const JourneyButton = styled.button`
+  ${tabButtonStyle}
   grid-row: 2/3;
   grid-column: 1/2;
   border-bottom: 2px solid
@@ -193,8 +199,85 @@ const MoreButton = styled.button`
       props.activeText === "journey" ? colors.brightYellow : "transparent"};
 `;
 
+const PresentButton = styled.button`
+  ${tabButtonStyle}
+  grid-row: 3/4;
+  grid-column: 1/2;
+  border-bottom: 2px solid
+    ${props =>
+      props.activeText === "present" ? colors.brightYellow : "transparent"};
+`;
+
 const About = () => {
   const [activeText, setActiveText] = React.useState("intro");
+
+  const renderActiveParagraph = tab => {
+    switch (tab) {
+      case "intro":
+        return (
+          <Text>
+            I am a highly motivated{" "}
+            <HighLight>
+              Front End Engineer who is passionate about creating rich user
+              interfaces and interactive web applications{" "}
+            </HighLight>{" "}
+            using a wide range of JavaScript technologies and libraries. I
+            strongly believe in the importance of writing clean, modular and
+            loosely coupled code that is easy to document, maintain and reuse.
+            <br />
+            My story as self-taught developer is outlined by the passion which
+            has driven me through a challenging yet exciting journey to become a
+            Software Engineer.
+          </Text>
+        );
+      case "journey":
+        return (
+          <Text>
+            Despite choosing a different academic path, which led me to
+            successfully complete a Bachelor in Psychology and a Master in
+            Clinical Psychology, technology has remained my primary interest and
+            a source of inspiration and curiosity. In July 2018, after
+            completing a Postgraduate at the Faculty of Business and Law of De
+            Montfort University of Leicester,{" "}
+            <HighLight>
+              I realised that I wanted to do something that I was really
+              passionate about, an invest all my energy into it.
+            </HighLight>
+            <br />
+            In September 2018, I planned and drafted my roadmap to become a web
+            developer within the next 6 months. I started learning HTML, CSS and
+            JavaScript from different sources (freeCodeCamp, Udemy). The more I
+            dived into web-development the more I loved it.
+            <br />I started coding everyday after work for 2-3 hours, and for
+            10-12 hours during the weekends. Two months into learning the
+            basics, I started applying for several junior roles, and within a
+            couple of weeks and a few interviews/technical tests, I received an
+            offer for a full-time position as a Junior Developer.
+          </Text>
+        );
+      case "present":
+        return (
+          <Text>
+            From the beginning of my new career, I have spent the majority of my
+            free time to not only improve and consolidate my knowledge of the
+            building blocks of the web (HTML, CSS, JavaScript, Browser
+            Compatibility, Web Performance and Web Security, Accessibility) but
+            I have also spent a large amount of time learning and experimenting
+            with modern framework and technologies (React, Redux, GraphQL, Node,
+            Apollo, Vue, Angular, SVG Animation, GSAP).
+            <br />
+            <HighLight>
+              I strongly believe that learning is a life-long process that is
+              essential to an Engineer’s success{" "}
+            </HighLight>
+            in delivering software the reflects the best standard of the
+            industry
+          </Text>
+        );
+      default:
+        return "Error retrieving the selected option, reload the page ...";
+    }
+  };
 
   return (
     <Section id="about">
@@ -207,67 +290,25 @@ const About = () => {
           About me
         </Title>
         <AboutGrid>
-          {activeText === "intro" && (
-            <Text>
-              I am a highly motivated Front End Engineer who is passionate about
-              creating rich user interfaces and interactive web applications
-              using a wide range of JavaScript technologies and libraries. I
-              strongly believe in the importance of writing clean, modular and
-              loosely coupled code that is easy to document, maintain and reuse.
-            </Text>
-          )}
-          {activeText === "journey" && (
-            <Text>
-              My story as self-taught developer is outlined by the passion which
-              has driven me through a challenging yet exciting journey to become
-              a Software Engineer. During my teenage years, I was a professional
-              eSports player competing at national and international level in an
-              online FPS called Counter-Strike. I was sponsored by different
-              tech company, including ASUS, and I had the opportunity to travel
-              across the country and play in LAN tournaments (including the
-              World Cyber Games Qualifier). I have also Despite choosing a
-              different academic path, which led me to successfully complete a
-              Bachelor in Psychology and a Master in Clinical Psychology,
-              technology has remained my primary interest and a source of
-              inspiration and curiosity. In July 2018, after completing a
-              Postgraduate in Housing Studies at the Faculty of Business and Law
-              of De Montfort University of Leicester, I realised that I had to
-              invest all my energy to start a career in tech and spend my time
-              doing something I love and I was passionate about. In September
-              2018, I planned and drafted my roadmap to become a web developer
-              within the next 6 months. I started learning HTML, CSS and
-              JavaScript vanilla using different resources (freeCodeCamp, Udemy,
-              Pluralsight) and begun to screen the different employment or
-              educational opportunities within London. The more I dived into
-              web-development the more I loved it. I started coding everyday
-              after work for 2-3 hours, and for 10-12 hours during the weekends.
-              Two months into learning the basics, I started applying for
-              several junior roles, and within a couple of weeks and a few
-              interviews/technical tests, I received an offer for a full-time
-              position as a Junior Developer. From there onwards, I have spent
-              the majority of my free time to improve and consolidate my
-              knowledge of the building blocks of the web (HTML, CSS,
-              JavaScript, Browser Compatibility, Web Performance and Web
-              Security) and spent a large amount of time learning and practicing
-              modern framework and technologies (Node, React, Redux, GraphQL).
-              Despite having then gained a relevant commercial experience in all
-              of these technologies, I strongly believe in learning as a
-              life-long process that is parallel and essential to an Engineer’s
-              success and the quality of code that is delivered.
-            </Text>
-          )}
+          {renderActiveParagraph(activeText)}
           <IntroButton
             onClick={() => setActiveText("intro")}
             activeText={activeText}
           >
             Intro
           </IntroButton>
-          <MoreButton
+          <JourneyButton
             onClick={() => setActiveText("journey")}
             activeText={activeText}
           >
             Journey
-          </MoreButton>
+          </JourneyButton>
+          <PresentButton
+            onClick={() => setActiveText("present")}
+            activeText={activeText}
+          >
+            Present
+          </PresentButton>
         </AboutGrid>
         <Figure>
           <ImgContainer>
