@@ -27,12 +27,23 @@ const header = css`
   font-family: ${fonts.primary};
   font-weight: normal;
   font-size: 5rem;
+  letter-spacing: 0.8rem;
   margin-bottom: 1rem;
+  text-align: center;
+
+  @media screen and (max-width: 900px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const subText = css`
   width: 75vw;
   font-size: 1.6rem;
+  text-align: center;
   line-height: 3rem;
   color: ${colors.grey};
 `;

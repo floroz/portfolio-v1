@@ -46,6 +46,7 @@ const anchor = css`
 const copyright = css`
   font-family: ${fonts.primary};
   font-size: 1.4rem;
+  margin-bottom: 2rem;
 `;
 
 const Footer = () => {
