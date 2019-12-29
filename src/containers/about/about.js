@@ -12,7 +12,7 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 
   @media screen and (max-width: 900px) {
     display: block;

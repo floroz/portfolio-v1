@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { theme } from "styles";
 import JSIcon from "components/icons/javascript";
 import ReactIcon from "components/icons/react";
 import ReduxIcon from "components/icons/redux";
@@ -11,10 +10,7 @@ import ProgressBar from "components/progress-bar/progress-bar";
 import GatsbyIcon from "components/icons/gatsby";
 import CSSIcon from "components/icons/css3";
 
-const { fonts } = theme;
-
 const section = css`
-  height: 100vh;
   width: 100%;
   padding: 0 5rem;
   display: flex;
@@ -31,19 +27,12 @@ const section = css`
   }
 `;
 
-// const title = css`
-//   display: inline-block;
-//   font-family: ${fonts.primary};
-//   font-size: 5rem;
-//   margin-bottom: 3rem;
-// `;
-
 const skillContainer = css`
   width: 100%;
 
   display: grid;
   grid-template-columns: 55px 1fr;
-  grid-template-rows: repeat(7, 70px);
+  grid-template-rows: repeat(7, 1fr);
   grid-gap: 2rem;
   align-items: center;
   justify-items: center;

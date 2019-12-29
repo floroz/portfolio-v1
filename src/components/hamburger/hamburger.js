@@ -46,11 +46,9 @@ const HamburgerButton = styled.button`
   }
 
   @media screen and (max-width: 600px) {
-    right: 10px;
+    right: 0px;
   }
 `;
-
-const HamburgerLine = styled.div``;
 
 const Hamburger = ({ open, onClick, ...props }) => {
   return (

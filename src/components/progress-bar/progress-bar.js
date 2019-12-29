@@ -20,6 +20,10 @@ const ProgressBarFrame = styled.div`
     color: ${colors.white};
     height: 100%;
     letter-spacing: 0.3rem;
+
+    @media screen and (max-width: 900px) {
+      font-size: 1.4rem;
+    }
   }
 
   [data-aos="progress-bar"] {
