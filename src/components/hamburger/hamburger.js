@@ -22,6 +22,27 @@ const HamburgerButton = styled.button`
     justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
+
+    div {
+      position: relative;
+      width: 44px;
+      height: 3px;
+      background-color: ${colors.brightYellow};
+      transform-origin: 6px;
+      transition: all 350ms ease;
+
+      :first-child {
+        transform: rotate(${({ open }) => (open ? "45deg" : "0")});
+      }
+
+      :nth-child(2) {
+        opacity: ${({ open }) => (open ? "0" : "1")};
+      }
+
+      :nth-child(3) {
+        transform: rotate(${({ open }) => (open ? "-45deg" : "0")});
+      }
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -29,26 +50,16 @@ const HamburgerButton = styled.button`
   }
 `;
 
-const HamburgerLine = styled.div`
-  width: 44px;
-  height: 3px;
-  background-color: ${colors.brightYellow};
-`;
+const HamburgerLine = styled.div``;
 
-const hamburger = ({ onClick, ...props }) => {
+const Hamburger = ({ open, onClick, ...props }) => {
   return (
-    <HamburgerButton
-      onClick={onClick}
-      data-aos="zoom-in"
-      data-aos-duration="500"
-      data-aos-delay="200"
-      {...props}
-    >
-      <HamburgerLine />
-      <HamburgerLine />
-      <HamburgerLine />
+    <HamburgerButton onClick={onClick} open={open} {...props}>
+      <div />
+      <div />
+      <div />
     </HamburgerButton>
   );
 };
 
-export default hamburger;
+export default Hamburger;
