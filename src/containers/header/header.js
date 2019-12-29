@@ -40,7 +40,7 @@ const nav = css`
   align-items: center;
   flex-flow: row nowrap;
 
-  &:first-child {
+  & > div:nth-of-type(1) {
     margin-left: 3.5rem;
 
     @media screen and (max-width: 720px) {

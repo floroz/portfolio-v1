@@ -6,7 +6,7 @@ import { theme } from "~styles";
 
 const { flexCenter, colors, fonts } = theme;
 
-const Figure = styled.figure`
+const LogoBox = styled.div`
   ${flexCenter}
 `;
 
@@ -34,13 +34,13 @@ const logo = css`
 
 export const Logo = props => {
   return (
-    <Figure ref={props.logoRef} id="logo" {...props}>
+    <LogoBox ref={props.logoRef} id="logo" {...props}>
       <LogoContainer>
         <Link to="#" aria-label="home" css={logo}>
           DT
         </Link>
       </LogoContainer>
-    </Figure>
+    </LogoBox>
   );
 };
 
