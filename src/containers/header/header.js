@@ -158,37 +158,34 @@ const responsiveList = css`
 `;
 
 const Sidebar = styled.aside`
-  display: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -999px;
+  height: 100vh;
+  width: 65vw;
+  background: ${colors.greyBlue};
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition-duration: 450ms;
 
-  @media screen and (max-width: 720px) {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: -999px;
-    height: 100vh;
-    width: 65vw;
-    background: ${colors.greyBlue};
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  &.slide-enter {
+    right: -999px;
+  }
 
-    &.slide-enter {
-      left: -999px;
-    }
+  &.slide-enter-done {
+    right: 0;
+  }
 
-    &.slide-enter-done {
-      left: 0;
-    }
+  &.slide-exit {
+    right: 0;
+  }
 
-    &.slide-exit {
-      left: -999px;
-    }
-
-    &.slide-exit-done {
-      left: -999px;
-    }
+  &.slide-exit-done {
+    right: -999px;
   }
 `;
 
@@ -256,7 +253,12 @@ const Header = () => {
         </ul>
         <Hamburger onClick={onHamburgerClick} />
       </nav>
-      <CSSTransition in={sideDrawerOpen} classNames="slide" timeout={250}>
+      <CSSTransition
+        in={sideDrawerOpen}
+        classNames="slide"
+        unmountOnExit
+        mountOnEnter
+      >
         <Sidebar>
           <ul css={responsiveList}>
             <li>
