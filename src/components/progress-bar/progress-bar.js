@@ -1,7 +1,8 @@
 import React from "react";
-import themes from "../../styles/theme";
+import { theme } from "~styles";
 import styled from "@emotion/styled";
-const { colors, fonts } = themes;
+
+const { colors, fonts } = theme;
 
 const ProgressBarFrame = styled.div`
   display: block;

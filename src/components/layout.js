@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import Footer from "./footer/footer";
-import LoadingIntro from "./loadingIntro/loadingIntro";
-import Header from "./header/header";
+import Footer from "~components/footer/footer";
+import LoadingIntro from "~components/loading-intro/loading-intro";
+import Header from "~containers/header/header";
 import { Global } from "@emotion/core";
-import { globalStyles } from "../styles";
+import { globalStyles } from "~styles";
 
 const Main = styled.main`
   margin: 0 auto;

@@ -1,8 +1,8 @@
 import React from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import { theme } from "../../styles";
-import profilePic from "../../images/profilepic.jpg";
+import { theme } from "~styles";
+import profilePic from "~images/profilepic.jpg";
 
 const { colors, fonts } = theme;
 
@@ -218,10 +218,42 @@ const About = () => {
           )}
           {activeText === "journey" && (
             <Text>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur odio accusantium distinctio maiores nemo beatae
-              doloribus animi, mollitia dolorum ad aperiam, quaerat inventore
-              velit omnis nostrum dolor. Sunt, eaque quod.
+              My story as self-taught developer is outlined by the passion which
+              has driven me through a challenging yet exciting journey to become
+              a Software Engineer. During my teenage years, I was a professional
+              eSports player competing at national and international level in an
+              online FPS called Counter-Strike. I was sponsored by different
+              tech company, including ASUS, and I had the opportunity to travel
+              across the country and play in LAN tournaments (including the
+              World Cyber Games Qualifier). I have also Despite choosing a
+              different academic path, which led me to successfully complete a
+              Bachelor in Psychology and a Master in Clinical Psychology,
+              technology has remained my primary interest and a source of
+              inspiration and curiosity. In July 2018, after completing a
+              Postgraduate in Housing Studies at the Faculty of Business and Law
+              of De Montfort University of Leicester, I realised that I had to
+              invest all my energy to start a career in tech and spend my time
+              doing something I love and I was passionate about. In September
+              2018, I planned and drafted my roadmap to become a web developer
+              within the next 6 months. I started learning HTML, CSS and
+              JavaScript vanilla using different resources (freeCodeCamp, Udemy,
+              Pluralsight) and begun to screen the different employment or
+              educational opportunities within London. The more I dived into
+              web-development the more I loved it. I started coding everyday
+              after work for 2-3 hours, and for 10-12 hours during the weekends.
+              Two months into learning the basics, I started applying for
+              several junior roles, and within a couple of weeks and a few
+              interviews/technical tests, I received an offer for a full-time
+              position as a Junior Developer. From there onwards, I have spent
+              the majority of my free time to improve and consolidate my
+              knowledge of the building blocks of the web (HTML, CSS,
+              JavaScript, Browser Compatibility, Web Performance and Web
+              Security) and spent a large amount of time learning and practicing
+              modern framework and technologies (Node, React, Redux, GraphQL).
+              Despite having then gained a relevant commercial experience in all
+              of these technologies, I strongly believe in learning as a
+              life-long process that is parallel and essential to an Engineer’s
+              success and the quality of code that is delivered.
             </Text>
           )}
           <IntroButton

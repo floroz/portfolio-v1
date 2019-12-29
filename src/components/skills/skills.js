@@ -1,18 +1,17 @@
 import React from "react";
-import { css, keyframes } from "@emotion/core";
-import themes from "../../styles/theme";
-import JSIcon from "../icons/javascript";
-import ReactIcon from "../icons/react";
-import ReduxIcon from "../icons/redux";
-import GraphQLIcon from "../icons/graphql";
-import ApolloIcon from "../icons/apollo";
-import NodeIcon from "../icons/node";
-import SASSIcon from "../icons/sass";
-import ProgressBar from "../progressBar/progressBar";
-import GatsbyIcon from "../icons/gatsby";
-import CSSIcon from "../icons/css3";
+import { css } from "@emotion/core";
+import { theme } from "~styles";
+import JSIcon from "~components/icons/javascript";
+import ReactIcon from "~components/icons/react";
+import ReduxIcon from "~components/icons/redux";
+import GraphQLIcon from "~components/icons/graphql";
+import ApolloIcon from "~components/icons/apollo";
+import NodeIcon from "~components/icons/node";
+import ProgressBar from "~components/progress-bar/progress-bar";
+import GatsbyIcon from "~components/icons/gatsby";
+import CSSIcon from "~components/icons/css3";
 
-const { colors, fonts } = themes;
+const { fonts } = theme;
 
 const section = css`
   height: 100vh;
