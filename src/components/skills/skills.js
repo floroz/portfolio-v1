@@ -1,15 +1,15 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { theme } from "~styles";
-import JSIcon from "~components/icons/javascript";
-import ReactIcon from "~components/icons/react";
-import ReduxIcon from "~components/icons/redux";
-import GraphQLIcon from "~components/icons/graphql";
-import ApolloIcon from "~components/icons/apollo";
-import NodeIcon from "~components/icons/node";
-import ProgressBar from "~components/progress-bar/progress-bar";
-import GatsbyIcon from "~components/icons/gatsby";
-import CSSIcon from "~components/icons/css3";
+import { theme } from "styles";
+import JSIcon from "components/icons/javascript";
+import ReactIcon from "components/icons/react";
+import ReduxIcon from "components/icons/redux";
+import GraphQLIcon from "components/icons/graphql";
+import ApolloIcon from "components/icons/apollo";
+import NodeIcon from "components/icons/node";
+import ProgressBar from "components/progress-bar/progress-bar";
+import GatsbyIcon from "components/icons/gatsby";
+import CSSIcon from "components/icons/css3";
 
 const { fonts } = theme;
 
@@ -31,12 +31,12 @@ const section = css`
   }
 `;
 
-const title = css`
-  display: inline-block;
-  font-family: ${fonts.primary};
-  font-size: 5rem;
-  margin-bottom: 3rem;
-`;
+// const title = css`
+//   display: inline-block;
+//   font-family: ${fonts.primary};
+//   font-size: 5rem;
+//   margin-bottom: 3rem;
+// `;
 
 const skillContainer = css`
   width: 100%;

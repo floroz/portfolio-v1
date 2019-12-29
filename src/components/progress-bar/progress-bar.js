@@ -1,5 +1,5 @@
 import React from "react";
-import { theme } from "~styles";
+import { theme } from "styles";
 import styled from "@emotion/styled";
 
 const { colors, fonts } = theme;

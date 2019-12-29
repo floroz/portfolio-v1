@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { theme } from "~styles";
-import Logo from "~components/logo/logo";
+import { theme } from "styles";
+import Logo from "components/logo/logo";
 
 const { colors } = theme;
 

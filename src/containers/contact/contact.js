@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { theme } from "~styles";
-import LinkButton from "~components/link-button/link-button";
+import { theme } from "styles";
+import LinkButton from "components/link-button/link-button";
 
 const { fonts, colors } = theme;
 

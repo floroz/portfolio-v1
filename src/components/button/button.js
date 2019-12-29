@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { theme } from "~styles";
+import { theme } from "styles";
 
 const { colors, fonts } = theme;
 

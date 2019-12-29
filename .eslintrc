@@ -4,10 +4,10 @@
   "settings": {
     "import/resolver": {
       "alias": [
-        ["~components", "src/components"],
-        ["~containers", "src/containers"],
-        ["~styles", "src/styles"],
-        ["~images", "src/images"]
+        ["components", "./src/components"],
+        ["containers", "./src/containers"],
+        ["styles", "./src/styles"],
+        ["images", "./src/images"]
       ]
     }
   }

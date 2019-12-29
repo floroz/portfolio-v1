@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2016",
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "components": ["src/components"],
+      "containers": ["src/containers"],
+      "images": ["src/images"],
+      "styles": ["src/styles"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

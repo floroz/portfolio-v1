@@ -1,9 +1,9 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { theme } from "~styles";
-import GithubIcon from "~components/icons/github";
-import TwitterIcon from "~components/icons/twitter";
-import LinkedInIcon from "~components/icons/linkedin";
+import { theme } from "styles";
+import GithubIcon from "components/icons/github";
+import TwitterIcon from "components/icons/twitter";
+import LinkedInIcon from "components/icons/linkedin";
 
 const { colors, fonts } = theme;
 
