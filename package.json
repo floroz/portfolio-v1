@@ -9,6 +9,7 @@
     "@emotion/styled": "^10.0.23",
     "aos": "^3.0.0-beta.6",
     "gatsby": "^2.17.6",
+    "gatsby-alias-imports": "^1.0.4",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-emotion": "^4.1.13",
     "gatsby-plugin-manifest": "^2.2.25",
@@ -25,6 +26,7 @@
     "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
+    "eslint-import-resolver-alias": "^1.1.2",
     "prettier": "^1.18.2",
     "react-axe": "^3.3.0"
   },

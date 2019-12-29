@@ -1,4 +1,14 @@
 {
   "extends": ["react-app", "plugin:jsx-a11y/strict"],
-  "plugins": ["jsx-a11y"]
+  "plugins": ["jsx-a11y"],
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["~components", "src/components"],
+        ["~containers", "src/containers"],
+        ["~styles", "src/styles"],
+        ["~images", "src/images"]
+      ]
+    }
+  }
 }
