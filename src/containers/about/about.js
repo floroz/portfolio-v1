@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Img from "gatsby-image";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { theme } from "styles/index";
-import profilePic from "images/profilepic.jpg";
+import { useStaticQuery, graphql } from "gatsby";
 
 const { colors, fonts } = theme;
 
@@ -158,7 +159,7 @@ const Frame = styled.div`
   }
 `;
 
-const Img = styled.img`
+const imgeStyle = css`
   width: 25rem;
   max-width: 100%;
   position: relative;
@@ -235,7 +236,31 @@ const PresentButton = styled.button`
 `;
 
 const About = () => {
-  const [activeText, setActiveText] = React.useState("intro");
+  const [activeText, setActiveText] = useState("intro");
+  const {
+    file: { image },
+  } = useStaticQuery(graphql`
+    {
+      file(relativePath: { eq: "profilepic.jpg" }) {
+        image: childImageSharp {
+          fluid {
+            aspectRatio
+            base64
+            originalImg
+            originalName
+            presentationHeight
+            presentationWidth
+            sizes
+            src
+            srcSet
+            srcSetWebp
+            srcWebp
+            tracedSVG
+          }
+        }
+      }
+    }
+  `);
 
   const renderActiveParagraph = tab => {
     switch (tab) {
@@ -343,7 +368,11 @@ const About = () => {
               data-aos-duration="750"
               data-aos-delay="300"
             />
-            <Img src={profilePic} alt="" />
+            <Img
+              fluid={image.fluid}
+              alt="Profile Picture of Daniele Tortora"
+              css={imgeStyle}
+            />
           </ImgContainer>
         </Figure>
       </Grid>
