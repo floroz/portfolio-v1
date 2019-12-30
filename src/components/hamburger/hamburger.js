@@ -10,11 +10,11 @@ const HamburgerButton = styled.button`
   @media screen and (max-width: 720px) {
     position: fixed;
     z-index: 1500;
-    top: 20px;
-    right: 20px;
+    top: 2rem;
+    right: 4rem;
     outline: none;
     border: none;
-    height: 60px;
+    height: 6rem;
     padding: 1rem;
     background-color: transparent;
     display: flex;
@@ -46,7 +46,7 @@ const HamburgerButton = styled.button`
   }
 
   @media screen and (max-width: 600px) {
-    right: 0px;
+    right: 2.5rem;
   }
 `;
 

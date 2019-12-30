@@ -36,9 +36,9 @@ export const Logo = props => {
   return (
     <LogoBox ref={props.logoRef} id="logo" {...props}>
       <LogoContainer>
-        <Link to="#" aria-label="home" css={logo}>
+        <a href="/" aria-label="navigate to home page" css={logo}>
           DT
-        </Link>
+        </a>
       </LogoContainer>
     </LogoBox>
   );

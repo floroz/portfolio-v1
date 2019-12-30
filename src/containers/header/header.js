@@ -41,14 +41,13 @@ const nav = css`
   flex-flow: row nowrap;
 
   & > div:nth-of-type(1) {
-    margin-left: 3.5rem;
-
-    @media screen and (max-width: 720px) {
-      margin-left: 2rem;
+    margin-left: 5rem;
+    @media screen and (max-width: 900px) {
+      margin-left: 4rem;
     }
 
     @media screen and (max-width: 600px) {
-      margin-left: 1rem;
+      margin-left: 2.5rem;
     }
   }
 `;
