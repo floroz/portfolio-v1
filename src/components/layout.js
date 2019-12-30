@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "aos/dist/aos.css";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import Head from "components/head";
 import Footer from "components/footer/footer";
 import LoadingIntro from "components/loading-intro/loading-intro";
 import Header from "containers/header/header";
@@ -44,6 +45,7 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
+      <Head />
       {!loading ? (
         <React.Fragment>
           <Header />

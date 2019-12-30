@@ -9,8 +9,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+import appleIcon57x57 from "images/apple-touch-icon-57x57.png";
+import appleIcon72x72 from "images/apple-touch-icon-72x72.png";
+import appleIcon76x76 from "images/apple-touch-icon-76x76.png";
+import appleIcon114x114 from "images/apple-touch-icon-114x114.png";
+import appleIcon120x120 from "images/apple-touch-icon-120x120.png";
+import appleIcon144x144 from "images/apple-touch-icon-144x144.png";
+import appleIcon152x152 from "images/apple-touch-icon-152x152.png";
+import appleIcon180x180 from "images/apple-touch-icon-180x180.png";
+import appleIcon from "images/apple-touch-icon.png";
+import favicon from "images/favicon.ico";
 
-function SEO({ description, lang, meta, title }) {
+function Head({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -35,7 +45,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={metaTitle}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -75,6 +84,8 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
+      <link rel="shortcut icon" href={favicon} />
+
       <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap"
         rel="stylesheet"
@@ -83,21 +94,30 @@ function SEO({ description, lang, meta, title }) {
         href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap"
         rel="stylesheet"
       />
+      <link rel="apple-touch-icon" sizes="57x57" href={appleIcon57x57} />
+      <link rel="apple-touch-icon" sizes="72x72" href={appleIcon72x72} />
+      <link rel="apple-touch-icon" sizes="76x76" href={appleIcon76x76} />
+      <link rel="apple-touch-icon" sizes="114x114" href={appleIcon114x114} />
+      <link rel="apple-touch-icon" sizes="120x120" href={appleIcon120x120} />
+      <link rel="apple-touch-icon" sizes="144x144" href={appleIcon144x144} />
+      <link rel="apple-touch-icon" sizes="152x152" href={appleIcon152x152} />
+      <link rel="apple-touch-icon" sizes="180x180" href={appleIcon180x180} />
     </Helmet>
   );
 }
 
-SEO.defaultProps = {
+Head.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  siteUrl: `https://www.danieletortora.com`,
 };
 
-SEO.propTypes = {
+Head.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 };
 
-export default SEO;
+export default Head;

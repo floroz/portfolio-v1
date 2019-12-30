@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "components/layout";
-import SEO from "components/seo";
+import SEO from "components/head";
 import Hero from "containers/hero/hero";
 import About from "containers/about/about";
 import Contact from "containers/contact/contact";
@@ -11,7 +11,6 @@ const IndexPage = () => {
   return (
     <>
       <Layout>
-        <SEO />
         <Hero />
         <About />
         <Skills />
