@@ -31,15 +31,15 @@ const HamburgerButton = styled.button`
       transform-origin: 6px;
       transition: all 350ms ease;
 
-      :first-child {
+      &:first-of-type {
         transform: rotate(${({ open }) => (open ? "45deg" : "0")});
       }
 
-      :nth-child(2) {
+      &:nth-of-type(2) {
         opacity: ${({ open }) => (open ? "0" : "1")};
       }
 
-      :nth-child(3) {
+      &:nth-of-type(3) {
         transform: rotate(${({ open }) => (open ? "-45deg" : "0")});
       }
     }

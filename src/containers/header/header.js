@@ -173,7 +173,7 @@ const Sidebar = styled.aside`
     align-items: center;
     z-index: 999;
     transform: translateX(100%);
-    transition-duration: 450ms;
+    transition: 350ms;
 
     &.slide-enter {
       transform: translateX(100%);
@@ -266,6 +266,10 @@ const Header = () => {
       <CSSTransition
         in={sideDrawerOpen}
         classNames="slide"
+        timeout={{
+          enter: 350,
+          exit: 0,
+        }}
         unmountOnExit
         mountOnEnter
       >
