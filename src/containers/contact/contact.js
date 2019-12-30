@@ -70,7 +70,7 @@ const Contact = () => {
         chat about a new technology!
       </p>
       <LinkButton
-        to="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
+        href="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
         data-aos="fade-up"
         data-aos-duration="350"
         data-aos-delay="500"
