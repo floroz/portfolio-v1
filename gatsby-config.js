@@ -28,6 +28,12 @@ module.exports = {
         analyzerMode: "static",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-155140384-1",
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
