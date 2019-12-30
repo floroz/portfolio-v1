@@ -6,6 +6,7 @@ import Hero from "containers/hero/hero";
 import About from "containers/about/about";
 import Contact from "containers/contact/contact";
 import Skills from "components/skills/skills";
+import Work from "containers/work/work";
 
 const IndexPage = () => {
   return (
@@ -14,6 +15,7 @@ const IndexPage = () => {
         <Hero />
         <About />
         <Skills />
+        <Work />
         <Contact />
       </Layout>
     </>
