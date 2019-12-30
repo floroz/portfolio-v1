@@ -252,7 +252,13 @@ const Header = () => {
             data-aos-delay={delay(1400)}
             data-aos-duration={initialAnimationDuration}
           >
-            <a href="#resume">Resume</a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              Resume
+            </a>
           </li>
         </ul>
         <Hamburger open={sideDrawerOpen} onClick={onHamburgerClick} />
@@ -281,7 +287,13 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="/resume">Resume</a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                Resume
+              </a>
             </li>
           </ul>
         </Sidebar>
