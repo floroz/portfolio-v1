@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Project from "components/project/project";
 import { theme } from "styles/index";
+import { useState } from "react";
 
 const { fonts, colors } = theme;
 
@@ -23,11 +24,13 @@ const Title = styled.h4`
 `;
 
 const Work = () => {
-  //
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   return (
     <Section id="work">
       {/* <Title>Work</Title> */}
       <Project
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
         originalPhoneMockupPhotoName="noble-iphone-mockup.png"
         originalMacMockupPhotoName="noble-macbook-mockup.png"
         title="Noble | Vision"
@@ -38,6 +41,8 @@ const Work = () => {
 • Ensure the technical feasibility of UI/UX designs."
       />
       <Project
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
         originalPhoneMockupPhotoName="portfolio-iphone-mockup.png"
         originalMacMockupPhotoName="portfolio-macbook-mockup.png"
         title="Portfolio | V1"
@@ -47,6 +52,8 @@ Animation using AOS and GSAP 3
 CSS-in-JS using emotion"
       />
       <Project
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
         originalPhoneMockupPhotoName="hackney-iphone-mockup.png"
         originalMacMockupPhotoName="hackney-macbook-mockup.png"
         title="Hackney Developer | API Hub"
