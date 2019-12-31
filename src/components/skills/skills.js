@@ -17,6 +17,7 @@ const section = css`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 
   @media screen and (max-width: 900px) {
     padding: 0 4rem;
