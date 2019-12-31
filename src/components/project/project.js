@@ -4,32 +4,32 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import { theme } from "styles/index";
+import { useState } from "react";
 
 const { colors, fonts } = theme;
 
-const Grid = styled.article`
-  display: grid;
-  grid-template-columns: minmax(min-content, 60rem) 30rem;
-  grid-template-rows: min-content 1fr;
-  grid-gap: 2rem;
-  justify-items: center;
+const Container = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 `;
 
 const Title = styled.h5`
-  grid-column: 1/2;
-  grid-row: 1/2;
-
   font-family: ${fonts.primary};
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2rem;
   color: ${colors.brightYellow};
+  padding-bottom: 1rem;
+  border-bottom: 1px solid ${colors.brightYellow};
 
   margin: 0;
 `;
 
 const Description = styled.p`
-  grid-column: 1/2;
-  grid-row: 2/3;
   font-family: ${fonts.secondary};
   font-size: 1.4rem;
   margin: 0;
@@ -38,21 +38,51 @@ const Description = styled.p`
 
 const Figure = styled.figure`
   position: relative;
-  grid-row: 1/3;
-  grid-column: 2/3;
-  width: 30rem;
+  /* width: 30rem; */
 `;
 
 const phoneImgStyle = css`
-  width: 20rem;
+  width: 30rem;
   position: absolute !important;
   top: 40%;
-  left: 80%;
+  left: 60%;
   z-index: 30;
 `;
 
 const macImgStyle = css`
-  width: 40rem;
+  width: 55rem;
+`;
+
+const MoreButton = styled.button`
+  color: ${colors.brightYellow};
+  background-color: transparent;
+  border: 1px solid ${colors.brightYellow};
+  border-radius: 3px;
+  padding: 2rem 4rem;
+  font-size: 1.4rem;
+  font-family: ${fonts.primary};
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  margin-top: 5rem;
+
+  span {
+    display: inline-block;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: ${colors.brightYellowTransparent};
+  }
+
+  &:hover {
+    span {
+      transform: translateX(10px);
+    }
+  }
 `;
 
 const Project = ({
@@ -61,6 +91,7 @@ const Project = ({
   title = "Project Untitled",
   description = "No Description provided for this project",
 }) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const { images } = useStaticQuery(graphql`
     {
       images: allImageSharp {
@@ -96,14 +127,18 @@ const Project = ({
   );
 
   return (
-    <Grid>
+    <Container>
+      {/* <Description>{description}</Description> */}
+
       <Title>{title}</Title>
-      <Description>{description}</Description>
+      <MoreButton onClick={() => setModalOpen(true)}>
+        More <span>&rarr;</span>
+      </MoreButton>
       <Figure>
         <Img fluid={phonePic.node.fluid} css={phoneImgStyle}></Img>
         <Img fluid={macPic.node.fluid} css={macImgStyle}></Img>
       </Figure>
-    </Grid>
+    </Container>
   );
 };
 

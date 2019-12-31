@@ -37,6 +37,7 @@ const skillContainer = css`
   grid-gap: 2rem;
   align-items: center;
   justify-items: center;
+  padding-bottom: 5rem;
 
   /* All icon logo are svg */
   & > svg {
