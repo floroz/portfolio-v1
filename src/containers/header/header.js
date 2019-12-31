@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import { theme } from "styles";
 import Logo from "components/logo/logo";
 import Hamburger from "components/hamburger/hamburger";
+import Backdrop from "components/backdrop/backdrop";
 
 const {
   navHeight,
@@ -192,16 +193,6 @@ const Sidebar = styled.aside`
   }
 `;
 
-const BackDrop = styled.div`
-  background: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-`;
-
 const Header = () => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
@@ -301,14 +292,7 @@ const Header = () => {
           </ul>
         </Sidebar>
       </CSSTransition>
-      {sideDrawerOpen && (
-        <BackDrop
-          onClick={closeSideBar}
-          tabIndex="-1"
-          aria-hidden="true"
-          role="presentation"
-        />
-      )}
+      {sideDrawerOpen && <Backdrop onClick={closeSideBar} />}
     </header>
   );
 };

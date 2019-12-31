@@ -5,15 +5,16 @@ import styled from "@emotion/styled";
 import { graphql, useStaticQuery } from "gatsby";
 import { theme } from "styles/index";
 import { useState } from "react";
+import Backdrop from "components/backdrop/backdrop";
+import { CSSTransition } from "react-transition-group";
 
 const { colors, fonts } = theme;
 
 const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
+  margin-bottom: 2.5rem;
 `;
 
 const Title = styled.h5`
@@ -26,19 +27,56 @@ const Title = styled.h5`
   padding-bottom: 1rem;
   border-bottom: 1px solid ${colors.brightYellow};
 
+  display: inline-block;
   margin: 0;
+`;
+
+const DescriptionModal = styled.aside`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 50vw;
+  height: 50vh;
+  padding: 2.5rem;
+  border-radius: 5px;
+  background-color: ${colors.grey};
+  transition: all 400ms linear;
+
+  &.modal-enter {
+    transform: translate(-999%, -50%);
+  }
+
+  &.modal-enter-done {
+    transform: translate(-50%, -50%);
+  }
+
+  &.modal-exit {
+    transform: translate(-50%, -50%);
+  }
+
+  &.modal-exit-done {
+    transform: translate(-999%, -50%);
+  }
 `;
 
 const Description = styled.p`
   font-family: ${fonts.secondary};
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: ${colors.maastrichtBlue};
   margin: 0;
-  max-width: 50rem;
+  width: 100%;
 `;
 
 const Figure = styled.figure`
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* width: 30rem; */
+  position: relative;
 `;
 
 const phoneImgStyle = css`
@@ -58,14 +96,18 @@ const MoreButton = styled.button`
   background-color: transparent;
   border: 1px solid ${colors.brightYellow};
   border-radius: 3px;
-  padding: 2rem 4rem;
+  padding: 1.5rem 2.5rem;
   font-size: 1.4rem;
   font-family: ${fonts.primary};
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  margin-top: 5rem;
+  position: absolute;
+  top: 6.7rem;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 100;
 
   span {
     display: inline-block;
@@ -83,6 +125,14 @@ const MoreButton = styled.button`
       transform: translateX(10px);
     }
   }
+`;
+
+const HR = styled.hr`
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: ${colors.greyBlue};
+  margin: 5rem 0;
 `;
 
 const Project = ({
@@ -128,16 +178,21 @@ const Project = ({
 
   return (
     <Container>
-      {/* <Description>{description}</Description> */}
-
-      <Title>{title}</Title>
-      <MoreButton onClick={() => setModalOpen(true)}>
-        More <span>&rarr;</span>
-      </MoreButton>
       <Figure>
+        <Title>{title}</Title>
+        <MoreButton onClick={() => setModalOpen(value => !value)}>
+          More <span>&rarr;</span>
+        </MoreButton>
         <Img fluid={phonePic.node.fluid} css={phoneImgStyle}></Img>
         <Img fluid={macPic.node.fluid} css={macImgStyle}></Img>
+        <CSSTransition in={modalOpen} timeout={400} classNames="modal">
+          <DescriptionModal open={modalOpen}>
+            <Description>{description}</Description>
+          </DescriptionModal>
+        </CSSTransition>
+        {modalOpen && <Backdrop onClick={() => setModalOpen(false)} />}
       </Figure>
+      <HR />
     </Container>
   );
 };
