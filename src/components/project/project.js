@@ -31,19 +31,23 @@ const Title = styled.h5`
   margin: 0;
 `;
 
-const DescriptionModal = styled.aside`
+const Modal = styled.aside`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-999%, -50%);
   z-index: 999;
   width: 65vw;
-  max-width: 70rem;
-  height: 80vh;
+  max-width: 50rem;
+  min-height: 50vh;
+  max-height: 80vh;
   padding: 2.5rem;
   border-radius: 5px;
   background-color: ${colors.grey};
   transition: all 400ms ease-out;
+  display: flex;
+  flex-flow: column nowrap;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 
   &.modal-enter {
     transform: translate(-999%, -50%);
@@ -60,15 +64,6 @@ const DescriptionModal = styled.aside`
   &.modal-exit-done {
     transform: translate(-999%, -50%);
   }
-`;
-
-const Description = styled.p`
-  font-family: ${fonts.secondary};
-  font-size: 1.5rem;
-  line-height: 1.5;
-  color: ${colors.maastrichtBlue};
-  margin: 0;
-  width: 100%;
 `;
 
 const Figure = styled.figure`
@@ -137,19 +132,19 @@ const HR = styled.hr`
 `;
 
 const Project = ({
-  modalIsOpen,
-  setModalIsOpen,
   originalMacMockupPhotoName,
   originalPhoneMockupPhotoName,
   title = "Project Untitled",
-  description = "No Description provided for this project",
+  card,
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
   const { images } = useStaticQuery(graphql`
     {
       images: allImageSharp {
         edges {
           node {
-            fluid(maxWidth: 400) {
+            fluid {
               aspectRatio
               base64
               originalImg
@@ -191,10 +186,10 @@ const Project = ({
           in={modalIsOpen}
           timeout={{ enter: 400, exit: 0 }}
           classNames="modal"
+          unmountOnExit
+          mountOnEnter
         >
-          <DescriptionModal open={modalIsOpen}>
-            <Description>{description}</Description>
-          </DescriptionModal>
+          <Modal open={modalIsOpen}>{card}</Modal>
         </CSSTransition>
         {modalIsOpen && <Backdrop onClick={() => setModalIsOpen(false)} />}
       </Figure>
