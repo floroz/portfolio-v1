@@ -33,7 +33,7 @@ const Grid = styled.div`
   background: ${colors.maastrichtBlue};
   display: grid;
   grid-template-columns: 1fr 40%;
-  grid-template-rows: min-content 50vh;
+  grid-template-rows: min-content 1fr;
   grid-gap: 2.5rem;
 
   @media screen and (max-width: 920px) {
@@ -49,17 +49,16 @@ const Title = styled.h3`
   font-size: 5rem;
   font-weight: normal;
   letter-spacing: 0.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
   grid-row: 1/2;
   justify-self: center;
 
   @media screen and (max-width: 920px) {
-    margin-bottom: 2rem;
     font-size: 4rem;
   }
 
   @media screen and (max-width: 600px) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-size: 3.5rem;
   }
 `;
