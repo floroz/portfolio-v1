@@ -130,7 +130,7 @@ const Hero = () => {
           data-aos-delay={delay()}
           data-aos-duration={initialAnimationDuration}
         >
-          I am a Front End Engineer based in London, UK who loves building web
+          I am a Front End Developer based in London, UK who loves building web
           applications.
         </Text>
         <LinkButton
