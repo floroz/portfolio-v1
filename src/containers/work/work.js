@@ -11,7 +11,7 @@ const Section = styled.section`
   justify-content: center;
   flex-direction: column;
   padding: 0 5rem;
-  margin: 10rem 0;
+  margin: 10rem 0 5rem 0;
 
   @media screen and (max-width: 900px) {
     padding: 0 4rem;
