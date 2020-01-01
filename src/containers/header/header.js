@@ -16,14 +16,14 @@ const {
   delay,
 } = theme;
 
-const header = css`
+const HeaderTag = styled.header`
   width: 100%;
   height: ${navHeight};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: ${props => (props.show ? "0" : "-10rem")};
   z-index: 1000;
   box-shadow: none;
   background: ${colors.maastrichtBlue};
@@ -193,7 +193,7 @@ const Sidebar = styled.aside`
   }
 `;
 
-const Header = () => {
+const Header = ({ show }) => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
 
   const onHamburgerClick = () =>
@@ -202,7 +202,7 @@ const Header = () => {
   const closeSideBar = () => setSideDrawerOpen(false);
 
   return (
-    <header css={header}>
+    <HeaderTag show={show}>
       <nav css={nav}>
         <Logo data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200" />
         <ul css={ul}>
@@ -293,7 +293,7 @@ const Header = () => {
         </Sidebar>
       </CSSTransition>
       {sideDrawerOpen && <Backdrop onClick={closeSideBar} />}
-    </header>
+    </HeaderTag>
   );
 };
 
