@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
@@ -11,6 +11,7 @@ import LoadingIntro from "components/loading-intro/loading-intro";
 import Header from "containers/header/header";
 import { Global } from "@emotion/core";
 import { globalStyles } from "styles";
+import useScrollDirection from "src/hooks/useScrollDirection";
 
 // if we're in dev mode
 if (process.env.NODE_ENV === "development") {
@@ -25,30 +26,7 @@ const Main = styled.main`
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [show, setShow] = useState(true);
-  const lastcrollPosition = useRef(0);
-
-  useEffect(() => {
-    window.addEventListener("scroll", useHandleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", useHandleScroll);
-    };
-  }, [useHandleScroll]);
-
-  const useHandleScroll = useCallback(() => {
-    console.log(show);
-    console.log(lastcrollPosition.current);
-    console.log(window.scrollY);
-
-    if (window.scrollY > lastcrollPosition.current) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-
-    lastcrollPosition.current = window.scrollY;
-  }, [show]);
+  const { show } = useScrollDirection();
 
   let AOS;
 

@@ -1,29 +1,26 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 const useScrollDirection = () => {
   const [show, setShow] = useState(true);
   const lastcrollPosition = useRef(0);
 
-  useEffect(() => {
-    function handleScroll(e) {
-      console.log(show);
-      console.log(lastcrollPosition.current);
-      console.log(window.scrollY);
-      if (window.scrollY > lastcrollPosition.current) {
-        setShow(false);
-      } else {
-        setShow(true);
-      }
-
-      lastcrollPosition.current = window.scrollY;
+  const useHandleScroll = useCallback(() => {
+    if (window.scrollY > lastcrollPosition.current) {
+      setShow(false);
+    } else {
+      setShow(true);
     }
 
-    window.addEventListener("scroll", handleScroll);
+    lastcrollPosition.current = window.scrollY;
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", useHandleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", useHandleScroll);
     };
-  }, [lastcrollPosition, show]);
+  }, [useHandleScroll]);
 
   return { show };
 };

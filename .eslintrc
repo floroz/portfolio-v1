@@ -7,7 +7,8 @@
         ["components", "./src/components"],
         ["containers", "./src/containers"],
         ["styles", "./src/styles"],
-        ["images", "./src/images"]
+        ["images", "./src/images"],
+        ["hooks", "./src/hooks"]
       ]
     }
   }
