@@ -1,11 +1,11 @@
 module.exports = {
-  title: `Daniele Tortora | Software Engineer`,
+  title: `Daniele Tortora | Front End Developer`,
   siteUrl: "https://www.danieletortora.com",
-  description: `I am a highly motivated Front End Engineer based in London, United Kingdom, who is passionate about creating rich user interfaces and interactive web applications using a wide range of JavaScript technologies and libraries.
+  description: `I am a highly motivated Front End Developer based in London, United Kingdom, who is passionate about creating rich user interfaces and interactive web applications using a wide range of JavaScript technologies and libraries.
     I strongly believe in the importance of writing clean, modular and loosely coupled code that is easy to document, maintain and reuse.
     I have experience working with HTML, CSS, JavaScript, React, Redux, TypeScript, GraphQL, Apollo, Electron, Jest, Webpack.`,
   keywords:
-    "Daniele Tortora, Daniele, Tortora, floroz, floroz87, tortora87, Software Engineer, Front End Engineer, developer, software developer, web developer, javascript, london, italy",
+    "Daniele Tortora, Daniele, Tortora, floroz, floroz87, tortora87, Software Engineer, Front End Developer, Front End Engineer, developer, software developer, web developer, javascript, london, italy",
   author: `Daniele Tortora`,
   siteLanguage: "en_GB",
   location: "London, UK",

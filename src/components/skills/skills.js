@@ -11,14 +11,13 @@ import GatsbyIcon from "components/icons/gatsby";
 import CSSIcon from "components/icons/css3";
 
 const section = css`
-  width: 100%;
   max-width: 1000px;
   padding: 0 5rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
+  margin: 0 auto 5rem auto;
 
   @media screen and (max-width: 900px) {
     padding: 0 4rem;
