@@ -27,6 +27,7 @@ const HeaderTag = styled.header`
   z-index: 1000;
   box-shadow: none;
   background: ${colors.maastrichtBlue};
+  transition: top 350ms ease;
 
   @media screen and (max-width: 720px) {
   }
@@ -251,7 +252,11 @@ const Header = ({ show }) => {
             </a>
           </li>
         </ul>
-        <Hamburger open={sideDrawerOpen} onClick={onHamburgerClick} />
+        <Hamburger
+          open={sideDrawerOpen}
+          show={show}
+          onClick={onHamburgerClick}
+        />
       </nav>
       <CSSTransition
         in={sideDrawerOpen}
