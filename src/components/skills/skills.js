@@ -12,6 +12,7 @@ import CSSIcon from "components/icons/css3";
 
 const section = css`
   width: 100%;
+  max-width: 1000px;
   padding: 0 5rem;
   display: flex;
   flex-flow: column nowrap;
