@@ -55,7 +55,7 @@ const Contact = () => {
         css={header}
         data-aos="fade-up"
         data-aos-duration="350"
-        data-aos-delay="500"
+        data-aos-delay="250"
       >
         Get in touch
       </h4>
@@ -63,7 +63,7 @@ const Contact = () => {
         css={subText}
         data-aos="fade-up"
         data-aos-duration="350"
-        data-aos-delay="500"
+        data-aos-delay="250"
       >
         I am not available to any freelance work at the moment, but I am always
         happy to consider new ideas or collaborations, or even just to have a
@@ -73,7 +73,7 @@ const Contact = () => {
         href="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
         data-aos="fade-up"
         data-aos-duration="350"
-        data-aos-delay="500"
+        data-aos-delay="250"
       >
         Contact me
       </LinkButton>
