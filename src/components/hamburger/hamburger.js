@@ -9,7 +9,10 @@ const HamburgerButton = styled.button`
 
   @media screen and (max-width: 720px) {
     position: fixed;
-    z-index: 1500;
+    /*
+    ** BackDrop z-index is 1600: if the sidebar is open, the hamburger index should be higher than the backdrop.
+     */
+    z-index: ${props => (props.open ? "1700" : "1500")};
     top: ${props => (props.show ? "2rem" : "-5rem")};
     right: 4rem;
     outline: none;

@@ -166,7 +166,10 @@ const Sidebar = styled.div`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    /*
+    ** BackDrop z-index is 1600: if the sidebar is open, the sidebar index should be higher than the backdrop.
+     */
+    z-index: 1650;
     transform: translateX(100%);
     transition: 350ms;
 

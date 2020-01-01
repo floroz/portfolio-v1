@@ -68,8 +68,8 @@ const Contact = () => {
       </Heading>
       <Text data-aos="fade-up" data-aos-duration="350" data-aos-delay="250">
         I am not available to any freelance work at the moment, but I am always
-        happy to consider new ideas or collaborations, or even just to have a
-        chat about a new technology!
+        happy to consider new ideas or collaborations, or have a chat about a
+        new opportunty.
       </Text>
       <LinkButton
         href="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
