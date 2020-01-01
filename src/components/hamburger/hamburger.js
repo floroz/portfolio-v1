@@ -10,7 +10,7 @@ const HamburgerButton = styled.button`
   @media screen and (max-width: 720px) {
     position: fixed;
     z-index: 1500;
-    top: 2rem;
+    top: ${props => (props.show ? "2rem" : "-5rem")};
     right: 4rem;
     outline: none;
     border: none;
@@ -22,6 +22,7 @@ const HamburgerButton = styled.button`
     justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
+    transition: top 350ms ease;
 
     div {
       position: relative;
@@ -50,9 +51,15 @@ const HamburgerButton = styled.button`
   }
 `;
 
-const Hamburger = ({ open, onClick, ...props }) => {
+const Hamburger = ({ open, onClick, show, ...props }) => {
   return (
-    <HamburgerButton onClick={onClick} open={open} {...props}>
+    <HamburgerButton
+      onClick={onClick}
+      open={open}
+      show={show}
+      aria-label="Hamburger to toggle SideBar"
+      {...props}
+    >
       <div />
       <div />
       <div />

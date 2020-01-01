@@ -17,6 +17,7 @@ const section = css`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 
   @media screen and (max-width: 900px) {
     padding: 0 4rem;
@@ -36,6 +37,7 @@ const skillContainer = css`
   grid-gap: 2rem;
   align-items: center;
   justify-items: center;
+  padding-bottom: 5rem;
 
   /* All icon logo are svg */
   & > svg {
@@ -55,21 +57,21 @@ const Skills = () => {
       {/* <h4 css={title}>Tech Skills</h4> */}
       <div css={skillContainer}>
         <JSIcon width="44px" height="auto" />
-        <ProgressBar level={90} description="JavaScript ES9+" />
+        <ProgressBar level={85} description="JavaScript ES9+" />
         <ReactIcon width="55px" height="auto" />
         <ProgressBar level={90} description="React | Hooks" />
         <ReduxIcon width="40px" height="auto" />
-        <ProgressBar level={85} description="Redux | Thunk | Saga" />
+        <ProgressBar level={82} description="Redux | Thunk | Saga" />
         <GraphQLIcon width="41px" height="auto" />
-        <ProgressBar level={75} description="GraphQL" />
+        <ProgressBar level={71} description="GraphQL" />
         <ApolloIcon />
-        <ProgressBar level={70} description="Apollo Client" />
+        <ProgressBar level={65} description="Apollo Client" />
         <NodeIcon width="55px" height="auto" />
-        <ProgressBar level={68} description="Node | Express.js" />
+        <ProgressBar level={62} description="Node | Express.js" />
         <CSSIcon width="44px" height="auto" />
-        <ProgressBar level={95} description="CSS Grid | SCSS | CSS-in-JS" />
+        <ProgressBar level={87} description="CSS Grid | SCSS | CSS-in-JS" />
         <GatsbyIcon />
-        <ProgressBar level={70} description="Gatsby.js" />
+        <ProgressBar level={78} description="Gatsby.js" />
       </div>
     </section>
   );

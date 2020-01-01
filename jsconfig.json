@@ -8,7 +8,8 @@
       "components": ["src/components"],
       "containers": ["src/containers"],
       "images": ["src/images"],
-      "styles": ["src/styles"]
+      "styles": ["src/styles"],
+      "hooks": ["src/hooks"]
     }
   },
   "exclude": ["node_modules", "**/node_modules/*"]

@@ -9,6 +9,7 @@ import LoadingIntro from "components/loading-intro/loading-intro";
 import Header from "containers/header/header";
 import { Global } from "@emotion/core";
 import { globalStyles } from "styles";
+import useScrollDirection from "hooks/useScrollDirection";
 
 // if we're in dev mode
 if (process.env.NODE_ENV === "development") {
@@ -23,7 +24,10 @@ const Main = styled.main`
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(true);
+  const { show } = useScrollDirection();
+
   let AOS;
+
   useEffect(() => {
     /**
      * Server-side rendering does not provide the 'document' object
@@ -48,7 +52,7 @@ const Layout = ({ children }) => {
       <Head />
       {!loading ? (
         <React.Fragment>
-          <Header />
+          <Header show={show} />
           <Main>{children}</Main>
           <Footer />
         </React.Fragment>
