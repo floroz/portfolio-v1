@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby";
 const { colors, fonts } = theme;
 
 const Section = styled.section`
-  width: 100vw;
+  width: 100%;
   padding: 0 5rem;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@ const AboutGrid = styled.article`
 
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 60px 60px 60px;
+  grid-template-rows: 60px 60px 1fr;
   grid-gap: 2rem;
 
   @media screen and (max-width: 920px) {

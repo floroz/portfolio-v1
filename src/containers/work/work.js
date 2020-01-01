@@ -12,10 +12,18 @@ const Section = styled.section`
   flex-direction: column;
   padding: 0 5rem;
   margin: 10rem 0;
+
+  @media screen and (max-width: 900px) {
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 2.5rem;
+  }
 `;
 
 const Title = styled.h4`
-  font-family: ${fonts.primary};
+  font-family: ${fonts.secondary};
   font-size: 5rem;
   letter-spacing: 0.8rem;
   margin-bottom: 2.5rem;
@@ -45,6 +53,14 @@ const CardText = styled.p`
   br {
     margin-bottom: 1.5rem;
   }
+
+  @media screen {
+    font-size: 1.4rem;
+
+    br {
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 const Work = () => {
@@ -66,7 +82,7 @@ const Work = () => {
       <Project
         originalPhoneMockupPhotoName="hackney-iphone-mockup.png"
         originalMacMockupPhotoName="hackney-macbook-mockup.png"
-        title="Hackney Developer | API Hub"
+        title="Hackney | API Hub"
         card={HackneyCard}
       />
     </Section>
@@ -79,16 +95,20 @@ var NobleCard = (
   <>
     <DescTitle>Noble | Vision</DescTitle>
     <CardText>
+      Noble Vision is a software designed for Security Analysts to analyze and
+      investigate real-time threats to the networks. My work involved:
+      <br />
       • Develop new user-facing features both for web-app and Electron
       applications using React, Redux, GraphQL, Apollo.
       <br />
-      • Migrate the codebase from class based to functional components with
-      React Hooks.
+      • Migrate the codebase from Electron to Web-Browser and from class based
+      to functional components with React Hooks.
       <br />
-      • Migrate style libraries from global SCSS/Bootstrap to a modern and
-      modular style architecture using CSS Modules and CSS-in-JS.
-      <br />• Build reusable code and libraries for future use. • Ensure the
-      technical feasibility of UI/UX designs.;
+      • Migrate style libraries from global SCSS/Bootstrap to a modern
+      architecture using CSS Modules and CSS-in-JS.
+      <br />• Build reusable code and libraries for future use.
+      <br />• Ensure the technical feasibility of UI/UX designs.
+      <br />• Dockerization of UI and microservices orchestrated by K8.
     </CardText>
   </>
 );
@@ -96,27 +116,38 @@ var PortfolioCard = (
   <>
     <DescTitle>Portfolio | V1</DescTitle>
     <CardText>
-      • Built using Gatsby.js and GraphQL
+      The 'Portfolio V1' is the first iteration of my personal portfolio, with
+      which I have had the chance to experiment with Gatsby and more generally
+      with the concepts behind modern Static Sites Generators. In addition to
+      that, I had the chance to implement a modern CSS-in-JS style guide using
+      'emotion' and animation libraries such as AOS and GSAP 3. Some of the
+      highlights and things I have achieved are:
       <br />
-      • Design and Icons created using Adobe Illustrator CC
+      • Built the portfolio using Gatsby.js, the gatsby-plugin ecosystem and
+      GraphQL.
       <br />
-      • Animation using AOS and GSAP 3
-      <br />• CSS-in-JS using emotion
+      • Designed and created icons using Adobe Illustrator CC
+      <br />
+      • Motion design and animation using AOS and GSAP 3.
+      <br />• CSS-in-JS using emotion and emotion/styled.
     </CardText>
   </>
 );
 
 var HackneyCard = (
   <>
-    <DescTitle>Hackney Developer | API HUB</DescTitle>
+    <DescTitle>Hackney | API HUB</DescTitle>
     <CardText>
-      • Designed and developed the front-end of the Developer API Hub using •
+      The API Hub has been my first project as Junior Developer and has allowed
+      me to learn Angular 7 and TypeScript, along with being exposed to a broad
+      range of CSS techniques and styleguides. Other highlights are:
+      <br />
+      • Designed and developed the front-end of the Developer API Hub using
       Angular 7, SCSS and TypeScript.
       <br />
-      • Test Driven Development of RESTful APIs endpoints using C# .NET Core
-      2.1.
-      <br />• Worked with different stakeholders and presented demos and
-      products to large audience.
+      • Unit Testing using Jasmine.
+      <br />• Worked with different stakeholders and presented sprints progress
+      and demos to large audience in-person and online.
     </CardText>
   </>
 );

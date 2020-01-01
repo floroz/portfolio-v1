@@ -29,18 +29,28 @@ const Title = styled.h5`
 
   display: inline-block;
   margin: 0;
+
+  @media screen and (max-width: 900px) {
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    letter-spacing: 0.5rem;
+  }
 `;
 
 const Modal = styled.aside`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-999%, -50%);
+  transform: translate(-50%, 990%);
   z-index: 999;
   width: 65vw;
   max-width: 50rem;
   min-height: 50vh;
-  max-height: 80vh;
+  max-height: 85vh;
+  overflow-y: auto;
   padding: 2.5rem;
   border-radius: 5px;
   background-color: ${colors.grey};
@@ -50,7 +60,7 @@ const Modal = styled.aside`
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
 
   &.modal-enter {
-    transform: translate(-999%, -50%);
+    transform: translate(-50%, 990%);
   }
 
   &.modal-enter-done {
@@ -62,7 +72,15 @@ const Modal = styled.aside`
   }
 
   &.modal-exit-done {
-    transform: translate(-999%, -50%);
+    transform: translate(-50%, 990%);
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 95vw;
   }
 `;
 
@@ -81,10 +99,28 @@ const phoneImgStyle = css`
   top: 40%;
   left: 60%;
   z-index: 30;
+
+  @media screen and (max-width: 900px) {
+    width: 20rem;
+    left: 55%;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 17rem;
+    left: 60%;
+  }
 `;
 
 const macImgStyle = css`
   width: 55rem;
+
+  @media screen and (max-width: 900px) {
+    width: 40rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 35rem;
+  }
 `;
 
 const MoreButton = styled.button`
@@ -104,6 +140,11 @@ const MoreButton = styled.button`
   right: 50%;
   transform: translateX(50%);
   z-index: 50;
+
+  @media screen and (max-width: 900px) {
+    top: 5rem;
+    padding: 1rem 2rem;
+  }
 
   span {
     display: inline-block;
@@ -129,6 +170,24 @@ const HR = styled.hr`
   width: 100%;
   background-color: ${colors.greyBlue};
   margin: 5rem 0;
+`;
+
+const XButton = styled.button`
+  margin: 0;
+  padding: 1rem;
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  top: 0%;
+  right: 0%;
+  border: none;
+  background-color: transparent;
+  color: ${colors.white};
+  outline: none;
+  font-family: ${fonts.primary};
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
 `;
 
 const Project = ({
@@ -189,7 +248,11 @@ const Project = ({
           unmountOnExit
           mountOnEnter
         >
-          <Modal open={modalIsOpen}>{card}</Modal>
+          <Modal open={modalIsOpen}>
+            <>
+              {card} <XButton onClick={() => setModalIsOpen(false)}>X</XButton>
+            </>
+          </Modal>
         </CSSTransition>
         {modalIsOpen && <Backdrop onClick={() => setModalIsOpen(false)} />}
       </Figure>
