@@ -21,7 +21,12 @@ import appleIcon from "images/apple-touch-icon.png";
 import favicon from "images/favicon.ico";
 
 function Head({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const {
+    site,
+    file: {
+      image: { fixed: image },
+    },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -32,12 +37,21 @@ function Head({ description, lang, meta, title }) {
             siteUrl
           }
         }
+
+        file(relativePath: { eq: "profilepic.jpg" }) {
+          image: childImageSharp {
+            fixed(width: 250) {
+              src
+            }
+          }
+        }
       }
     `
   );
 
   const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title || site.siteMetadata.title;
+  const ogImageSrc = site.siteMetadata.siteUrl + image.src;
 
   return (
     <Helmet
@@ -65,6 +79,10 @@ function Head({ description, lang, meta, title }) {
         {
           property: `og:url`,
           content: site.siteMetadata.siteUrl,
+        },
+        {
+          property: `og:image`,
+          content: ogImageSrc,
         },
         {
           name: `twitter:card`,
