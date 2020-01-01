@@ -27,6 +27,10 @@ const section = css`
   @media screen and (max-width: 600px) {
     padding: 0 2.5rem;
   }
+
+  @media screen and (max-width: 400px) {
+    padding: 0 1rem;
+  }
 `;
 
 const skillContainer = css`
@@ -60,17 +64,17 @@ const Skills = () => {
         <JSIcon width="44px" height="auto" />
         <ProgressBar level={85} description="JavaScript ES9+" />
         <ReactIcon width="55px" height="auto" />
-        <ProgressBar level={90} description="React | Hooks" />
+        <ProgressBar level={90} description="React" />
         <ReduxIcon width="40px" height="auto" />
-        <ProgressBar level={82} description="Redux | Thunk | Saga" />
+        <ProgressBar level={82} description="Redux" />
         <GraphQLIcon width="41px" height="auto" />
         <ProgressBar level={71} description="GraphQL" />
         <ApolloIcon />
-        <ProgressBar level={65} description="Apollo Client" />
+        <ProgressBar level={65} description="Apollo" />
         <NodeIcon width="55px" height="auto" />
-        <ProgressBar level={62} description="Node | Express.js" />
+        <ProgressBar level={62} description="Node" />
         <CSSIcon width="44px" height="auto" />
-        <ProgressBar level={87} description="CSS Grid | SCSS | CSS-in-JS" />
+        <ProgressBar level={87} description="CSS" />
         <GatsbyIcon />
         <ProgressBar level={78} description="Gatsby.js" />
       </div>

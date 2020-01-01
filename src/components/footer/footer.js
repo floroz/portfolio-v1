@@ -26,6 +26,10 @@ const List = styled.ul`
   align-items: center;
   justify-content: space-between;
   width: 30rem;
+
+  @media screen and (max-width: 600px) {
+    width: 20rem;
+  }
 `;
 
 const SocialLink = styled.a`

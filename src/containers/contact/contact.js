@@ -1,11 +1,11 @@
 import React from "react";
-import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 import { theme } from "styles";
 import LinkButton from "components/link-button/link-button";
 
 const { fonts, colors } = theme;
 
-const section = css`
+const Section = styled.section`
   width: 100%;
   height: 50rem;
   display: flex;
@@ -21,9 +21,13 @@ const section = css`
   @media screen and (max-width: 600px) {
     padding: 0 2.5rem;
   }
+
+  @media screen and (max-width: 400px) {
+    padding: 0 1rem;
+  }
 `;
 
-const header = css`
+const Heading = styled.h4`
   font-family: ${fonts.primary};
   font-weight: normal;
   font-size: 5rem;
@@ -38,46 +42,44 @@ const header = css`
   @media screen and (max-width: 600px) {
     font-size: 3.5rem;
   }
+  @media screen and (max-width: 400px) {
+    font-size: 3rem;
+  }
 `;
 
-const subText = css`
+const Text = styled.p`
   width: 75vw;
   font-size: 1.6rem;
   text-align: center;
   line-height: 3rem;
   color: ${colors.grey};
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.4rem;
+    line-height: 1.7;
+  }
 `;
 
 const Contact = () => {
   return (
-    <section css={section} id="contact">
-      <h4
-        css={header}
-        data-aos="fade-up"
-        data-aos-duration="350"
-        data-aos-delay="250"
-      >
+    <Section id="contact">
+      <Heading data-aos="fade-up" data-aos-duration="350" data-aos-delay="250">
         Get in touch
-      </h4>
-      <p
-        css={subText}
-        data-aos="fade-up"
-        data-aos-duration="350"
-        data-aos-delay="250"
-      >
+      </Heading>
+      <Text data-aos="fade-up" data-aos-duration="350" data-aos-delay="250">
         I am not available to any freelance work at the moment, but I am always
         happy to consider new ideas or collaborations, or even just to have a
         chat about a new technology!
-      </p>
+      </Text>
       <LinkButton
         href="mailto:contact@danieletortora.com?subject=Get%20in%20Touch"
-        data-aos="fade-up"
-        data-aos-duration="350"
-        data-aos-delay="250"
+        // data-aos="fade-up"
+        // data-aos-duration="350"
+        // data-aos-delay="250"
       >
         Contact me
       </LinkButton>
-    </section>
+    </Section>
   );
 };
 

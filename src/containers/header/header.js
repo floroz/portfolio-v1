@@ -7,18 +7,11 @@ import Logo from "components/logo/logo";
 import Hamburger from "components/hamburger/hamburger";
 import Backdrop from "components/backdrop/backdrop";
 
-const {
-  navHeight,
-  fonts,
-  colors,
-  flexCenter,
-  initialAnimationDuration,
-  delay,
-} = theme;
+const { fonts, colors, flexCenter, initialAnimationDuration, delay } = theme;
 
 const HeaderTag = styled.header`
   width: 100%;
-  height: ${navHeight};
+  height: 10rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +22,8 @@ const HeaderTag = styled.header`
   background: ${colors.maastrichtBlue};
   transition: top 350ms ease;
 
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: 600px) {
+    height: 7.5rem;
   }
 `;
 

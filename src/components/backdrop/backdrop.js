@@ -8,7 +8,7 @@ const BackDrop = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 99;
+  z-index: 1600; /* needs to be higher than Hamburger and Header */
 `;
 
 const Backdrop = ({ onClick }) => {

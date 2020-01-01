@@ -23,6 +23,10 @@ const Section = styled.section`
   @media screen and (max-width: 600px) {
     padding: 0 2.5rem;
   }
+
+  @media screen and (max-width: 400px) {
+    padding: 0 1rem;
+  }
 `;
 
 const Grid = styled.div`

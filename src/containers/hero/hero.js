@@ -13,6 +13,7 @@ const section = css`
   justify-content: center;
   align-items: flex-start;
   padding: 0 5rem;
+  margin-top: 2rem;
 
   @media screen and (max-width: 900px) {
     padding: 0 4rem;
@@ -79,6 +80,10 @@ const subtext = css`
 
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top: 2rem;
   }
 `;
 
