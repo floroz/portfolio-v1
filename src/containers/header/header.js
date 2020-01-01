@@ -158,7 +158,7 @@ const responsiveList = css`
   }
 `;
 
-const Sidebar = styled.aside`
+const Sidebar = styled.div`
   display: none;
   @media screen and (max-width: 720px) {
     display: block;

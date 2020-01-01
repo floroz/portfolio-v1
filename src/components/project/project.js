@@ -17,7 +17,7 @@ const Container = styled.div`
   margin-bottom: 2.5rem;
 `;
 
-const Title = styled.h5`
+const Title = styled.h4`
   font-family: ${fonts.primary};
   font-size: 1.8rem;
   text-align: center;
@@ -40,7 +40,7 @@ const Title = styled.h5`
   }
 `;
 
-const Modal = styled.aside`
+const Modal = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;

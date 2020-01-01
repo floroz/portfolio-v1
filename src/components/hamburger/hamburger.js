@@ -53,7 +53,13 @@ const HamburgerButton = styled.button`
 
 const Hamburger = ({ open, onClick, show, ...props }) => {
   return (
-    <HamburgerButton onClick={onClick} open={open} show={show} {...props}>
+    <HamburgerButton
+      onClick={onClick}
+      open={open}
+      show={show}
+      aria-label="Hamburger to toggle SideBar"
+      {...props}
+    >
       <div />
       <div />
       <div />

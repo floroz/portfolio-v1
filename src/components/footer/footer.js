@@ -1,5 +1,5 @@
 import React from "react";
-import { css } from "@emotion/core";
+import styled from "@emotion/styled";
 import { theme } from "styles";
 import GithubIcon from "components/icons/github";
 import TwitterIcon from "components/icons/twitter";
@@ -7,7 +7,7 @@ import LinkedInIcon from "components/icons/linkedin";
 
 const { colors, fonts } = theme;
 
-const footer = css`
+const FooterTag = styled.footer`
   width: 100%;
   height: 10rem;
   background: ${colors.maastrichtBlue};
@@ -19,7 +19,7 @@ const footer = css`
   align-items: center;
 `;
 
-const ul = css`
+const List = styled.ul`
   margin-top: 2rem;
   display: flex;
   flex-flow: row nowrap;
@@ -28,7 +28,7 @@ const ul = css`
   width: 30rem;
 `;
 
-const anchor = css`
+const SocialLink = styled.a`
   display: inline-block;
 
   & > svg {
@@ -43,7 +43,7 @@ const anchor = css`
   }
 `;
 
-const copyright = css`
+const Copyright = styled.p`
   font-family: ${fonts.primary};
   font-size: 1.4rem;
   margin-bottom: 2rem;
@@ -51,26 +51,35 @@ const copyright = css`
 
 const Footer = () => {
   return (
-    <footer css={footer}>
-      <ul css={ul}>
+    <FooterTag>
+      <List>
         <li>
-          <a href="https://www.linkedin.com/in/danieletortora/" css={anchor}>
+          <SocialLink
+            href="https://www.linkedin.com/in/danieletortora/"
+            aria-label="LinkedIn Profile"
+          >
             <LinkedInIcon width="64" />
-          </a>
+          </SocialLink>
         </li>
         <li>
-          <a href="https://github.com/floroz" css={anchor}>
+          <SocialLink
+            href="https://github.com/floroz"
+            aria-label="GitHub Profile"
+          >
             <GithubIcon width="64" />
-          </a>
+          </SocialLink>
         </li>
         <li>
-          <a href="https://twitter.com/floroz87" css={anchor}>
+          <SocialLink
+            href="https://twitter.com/floroz87"
+            aria-label="Twitter Profile"
+          >
             <TwitterIcon width="64" />
-          </a>
+          </SocialLink>
         </li>
-      </ul>
-      <p css={copyright}>Daniele Tortora 2020 &copy; London, UK</p>
-    </footer>
+      </List>
+      <Copyright>Daniele Tortora 2020 &copy; London, UK</Copyright>
+    </FooterTag>
   );
 };
 

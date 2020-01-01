@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import "aos/dist/aos.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Head from "components/head";
@@ -11,7 +9,7 @@ import LoadingIntro from "components/loading-intro/loading-intro";
 import Header from "containers/header/header";
 import { Global } from "@emotion/core";
 import { globalStyles } from "styles";
-import useScrollDirection from "src/hooks/useScrollDirection";
+import useScrollDirection from "hooks/useScrollDirection";
 
 // if we're in dev mode
 if (process.env.NODE_ENV === "development") {
