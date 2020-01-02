@@ -108,11 +108,8 @@ const Text = styled.p`
 `;
 
 const HighLight = styled.span`
-  /* text-decoration-line: underline;
-  text-decoration-color: ${colors.brightYellow};
-  text-decoration-style: double; */
-  color: ${colors.white};
-  border-bottom: 1px solid ${colors.brightYellow};
+  color: ${colors.brightYellow};
+  /* border-bottom: 1px solid ${colors.brightYellow}; */
 `;
 
 const Figure = styled.figure`
@@ -298,23 +295,21 @@ const About = () => {
             <Text>
               I have a strong understanding of JavaScript and the way the
               language works under the hood, along with an excellent
-              understanding of how Web Broweser works, which allows me to
-              quickly adapt to new tools and technologies.
+              understanding of how Web Browsers work, which allows me to quickly
+              adapt to new tools and technologies.
             </Text>
             <Text>
-              Furthermore, I work with a variety of framework and libraries and
-              I like experiment outside of work with the latest tech, to ensure
-              I am always abreast of the industry's innovations.
+              Furthermore, I work with a variety of frameworks and libraries and
+              I like to experiment outside of work with the latest tech, to
+              ensure that I am always abreast of the industry's innovations.
             </Text>
             <Text>
               Along with a robust experience in using HTML5, CSS (SCSS,
-              styled-component, CSS Modules) and understanding Web Performances,
-              the list of tools I consider myself proficient in using includes
-              React (Hooks and Functional Component Composition), Redux (Thunk,
-              Saga and Observables), TypeScript, GraphQL, Apollo, Gatsby.js,
-              Node, Express. I prefer Jest and React Testing Library for Unit
-              Testing and I am keen to learn and use Cypress in a commercial
-              environment.
+              styled-components, CSS Modules), Accessibility and Web
+              Performances (and the cost of JavaScript for the client), the list
+              of tools I consider myself proficient in using includes React
+              (Hooks and Context API), Redux, TypeScript, GraphQL, Apollo,
+              Gatsby.js, Node, Express, Jest.
             </Text>
           </TextWrapper>
         );
@@ -324,8 +319,8 @@ const About = () => {
             <Text>
               Despite choosing a different academic path, which led me to
               successfully complete a Bachelor in Psychology and a Master in
-              Clinical Psychology, technology has remained my primary interest
-              and a source of inspiration and curiosity. In July 2018, after
+              Clinical Psychology, technology remained my primary interest and a
+              source of inspiration and curiosity. In July 2018, after
               completing a Postgraduate at the Faculty of Business and Law of De
               Montfort University of Leicester,{" "}
               <HighLight>
@@ -345,6 +340,9 @@ const About = () => {
               started applying for several junior roles, and within a couple of
               weeks and a few interviews/technical tests, I received an offer
               for a full-time position as a Junior Developer.
+              <br /> Since then I have worked on different projects and in
+              different companies, always striving to become a better developer
+              and to deliver great software.
             </Text>
           </TextWrapper>
         );
@@ -352,14 +350,12 @@ const About = () => {
         return (
           <TextWrapper>
             <Text>
-              From the beginning of my new career, I have spent the majority of
-              my free time to not only improve and consolidate my knowledge of
-              the building blocks of the web (HTML, CSS, JavaScript, Browser
+              Since the beginning of my journey, I have spent the majority of my
+              time not only to improve and consolidate my knowledge of the
+              building blocks of the web (HTML, CSS, JavaScript, Browser
               Compatibility, Web Performance and Web Security, Accessibility)
               but I have also spent a large amount of time learning and
-              experimenting with modern framework, languages and libraries
-              (React, Vue, Angular, Redux, GraphQL, Node, Apollo, SVG Animation,
-              GSAP).
+              experimenting with modern framework, languages and libraries.
             </Text>
             <Text>
               I constantly keep myself up to date with the latest innovation in
