@@ -60,10 +60,6 @@ const CardText = styled.p`
 
   @media screen and (max-width: 900px) {
     font-size: 1.4rem;
-
-    br {
-      margin-bottom: 1rem;
-    }
   }
 
   @media screen and (max-width: 600px) {
