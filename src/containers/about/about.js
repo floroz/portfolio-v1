@@ -278,38 +278,38 @@ const About = () => {
         return (
           <TextWrapper>
             <Text>
-              I am a highly motivated{" "}
+              I am a{" "}
               <HighLight>
-                Front End Developer who is passionate about creating rich user
+                Front End Engineer who is passionate about creating rich user
                 interfaces and interactive web applications{" "}
               </HighLight>{" "}
-              using a wide range of JavaScript technologies and libraries. I
-              strongly believe in the importance of writing clean, modular and
-              loosely coupled code that is easy to document, maintain and reuse.
+              using JavaScript technologies and libraries. I believe in the
+              importance of writing clean, modular and loosely coupled code that
+              is easy to document, maintain and reuse.
             </Text>
             <Text>
-              My story as self-taught developer is outlined by the passion which
-              has driven me through a challenging yet exciting journey to become
-              a Software Developer.
+              My story as self-taught developer is outlined by this passion for
+              tech, which has been my driving force through a challenging yet
+              exciting journey to become a Software Engineer.
             </Text>
             <Text>
               I have a strong understanding of JavaScript and the way the
-              language works under the hood, along with an excellent
-              understanding of how Web Browsers work, which allows me to quickly
-              adapt to new tools and technologies.
+              language works under the hood, alongside an excellent grasp of how
+              Web Browsers operate, which allows me to quickly adapt to new
+              tools and technologies.
             </Text>
             <Text>
-              Furthermore, I work with a variety of frameworks and libraries and
-              I like to experiment outside of work with the latest tech, to
-              ensure that I am always abreast of the industry's innovations.
+              Furthermore, I employ a variety of frameworks and libraries and
+              enjoy experimenting outside of work with the latest tech, to
+              ensure that I am always abreast of the industry's best new
+              innovations.
             </Text>
             <Text>
-              Along with a robust experience in using HTML5, CSS (SCSS,
-              styled-components, CSS Modules), Accessibility and Web
-              Performances (and the cost of JavaScript for the client), the list
-              of tools I consider myself proficient in using includes React
-              (Hooks and Context API), Redux, TypeScript, GraphQL, Apollo,
-              Gatsby.js, Node, Express, Jest.
+              Along with exhaustive experience in using (semantic) HTML5, CSS
+              (SCSS, styled-components), Accessibility and Web Performances (and
+              knowing the cost of JavaScript for the client), the list of tools
+              I'm proficient in using includes React, Redux, TypeScript,
+              GraphQL, Apollo, Gatsby, Node, Express, and Jest.
             </Text>
           </TextWrapper>
         );
