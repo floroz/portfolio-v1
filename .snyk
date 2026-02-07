@@ -1,0 +1,124 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - gatsby > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > lodash
+    - gatsby-plugin-offline > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby-plugin-offline > lodash
+    - gatsby-plugin-sharp > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby-plugin-sharp > lodash
+    - gatsby-plugin-sharp > async > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby-plugin-sharp > async > lodash
+    - gatsby-plugin-offline > cheerio > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby-plugin-offline > cheerio > lodash
+    - gatsby-plugin-webpack-bundle-analyzer > webpack-bundle-analyzer > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          gatsby-plugin-webpack-bundle-analyzer > webpack-bundle-analyzer >
+          lodash
+    - gatsby > @babel/core > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > @babel/core > lodash
+    - gatsby > css-loader > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > css-loader > lodash
+    - gatsby > eslint > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint > lodash
+    - gatsby > eslint-plugin-flowtype > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint-plugin-flowtype > lodash
+    - gatsby > eslint-plugin-graphql > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint-plugin-graphql > lodash
+    - gatsby > gatsby-cli > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > gatsby-cli > lodash
+    - gatsby > gatsby-plugin-page-creator > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > gatsby-plugin-page-creator > lodash
+    - gatsby > webpack-merge > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > webpack-merge > lodash
+    - gatsby > @babel/core > @babel/generator > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > @babel/core > @babel/generator > lodash
+    - gatsby > eslint > inquirer > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint > inquirer > lodash
+    - gatsby > eslint > table > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint > table > lodash
+    - gatsby > eslint-plugin-graphql > graphql-config > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > eslint-plugin-graphql > graphql-config > lodash
+    - gatsby > gatsby-cli > gatsby-telemetry > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > gatsby-cli > gatsby-telemetry > lodash
+    - gatsby > gatsby-plugin-page-creator > gatsby-page-utils > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > gatsby-plugin-page-creator > gatsby-page-utils > lodash
+    - gatsby > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          gatsby > optimize-css-assets-webpack-plugin > last-call-webpack-plugin
+          > lodash
+    - gatsby > react-dev-utils > inquirer > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > react-dev-utils > inquirer > lodash
+    - gatsby > webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > webpack-dev-server > http-proxy-middleware > lodash
+    - gatsby > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > @babel/core > @babel/helpers > @babel/traverse > lodash
+    - gatsby > webpack-dev-server > portfinder > async > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: gatsby > webpack-dev-server > portfinder > async > lodash
+    - gatsby-plugin-emotion > @emotion/babel-preset-css-prop > @babel/plugin-transform-react-jsx > @babel/helper-builder-react-jsx > @babel/types > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          gatsby-plugin-emotion > @emotion/babel-preset-css-prop >
+          @babel/plugin-transform-react-jsx > @babel/helper-builder-react-jsx >
+          @babel/types > lodash
+    - gatsby > babel-preset-gatsby > @babel/preset-env > @babel/plugin-proposal-unicode-property-regex > @babel/helper-regex > lodash:
+        patched: '2026-02-07T06:33:37.860Z'
+        id: SNYK-JS-LODASH-567746
+        path: >-
+          gatsby > babel-preset-gatsby > @babel/preset-env >
+          @babel/plugin-proposal-unicode-property-regex > @babel/helper-regex >
+          lodash
