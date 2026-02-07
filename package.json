@@ -14,23 +14,24 @@
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
     "aos": "^3.0.0-beta.6",
-    "gatsby": "^2.17.6",
+    "gatsby": "^5.0.0",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-emotion": "^4.1.13",
     "gatsby-plugin-google-analytics": "^2.1.31",
-    "gatsby-plugin-manifest": "^2.2.25",
+    "gatsby-plugin-manifest": "^4.8.0",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.2.34",
+    "gatsby-plugin-sharp": "^4.8.0",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
-    "gatsby-source-filesystem": "^2.1.35",
-    "gatsby-transformer-sharp": "^2.3.1",
-    "gsap": "^3.0.4",
+    "gatsby-source-filesystem": "^4.21.0",
+    "gatsby-transformer-sharp": "^4.8.0",
+    "gsap": "^3.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "eslint-import-resolver-alias": "^1.1.2",
@@ -46,6 +47,9 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "lint": "eslint --ignore-path .gitignore . --ext .js,.jsx",
-    "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
-  }
+    "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
